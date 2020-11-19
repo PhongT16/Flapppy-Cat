@@ -3464,6 +3464,7 @@ CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o: /Users/phongt
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o: /Users/phongtran/Downloads/cinder_0.9.2_mac/include/glm/vector_relational.hpp
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o: ../src/visualizer/sketchpad.cc
 
+CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: ../include/visualizer/pipe.h
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: ../include/visualizer/sprite.h
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: /Users/phongtran/Downloads/cinder_0.9.2_mac/include/boost/assert.hpp
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: /Users/phongtran/Downloads/cinder_0.9.2_mac/include/boost/cerrno.hpp

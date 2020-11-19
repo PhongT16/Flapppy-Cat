@@ -51,10 +51,12 @@ void Sprite::MoveRight() {
 
 }
 void Sprite::Drop() {
-  position_.y += 0.5;
+  //position_.y += 3;
+  velocity_.y = 2;
+  position_.y +=  velocity_.y;
 }
 void Sprite::MoveUp() {
-  position_.y -= 30;
+  position_.y -= 50;
 }
 bool Sprite::CheckBorderCollision() {
 
@@ -79,12 +81,13 @@ bool Sprite::CheckBorderCollision() {
 bool Sprite::GetGame() { return GameEnd; }
 
 bool Sprite::CheckPipeCollision() {
-
-  double top_border_y_ = 300;
-  double bottom_border_y_ = 637.5;
+  //double top_border_y_ = 300;
+  //double bottom_border_y_ = 637.5;
   bool is_collision = false;
-
-  if (position_.y + velocity_.y - kRadius <= top_border_y_) {
+/*
+  if (position_.y + velocity_.y - kRadius <= top_border_y_ && position_.x >= current_pipe_.GetPositionLeftSide()
+  && position_.x <= current_pipe_.GetPositionRightSide()) {
+    //std::cout << "here" << std::endl;
     position_.y = top_border_y_ + kRadius;
     position_.x += velocity_.x;
     velocity_ = glm::vec2(0,0);
@@ -96,10 +99,15 @@ bool Sprite::CheckPipeCollision() {
     velocity_ = glm::vec2(0,0);
     is_collision = true;
   }
-
+*/
 
   return is_collision;
 
+}
+void Sprite::SetPipe(Pipe & pipe) {
+
+  //std::cout << pipe.GetPositionLeftSide() << std::endl;
+  //current_pipe_ = pipe;
 }
 
 }

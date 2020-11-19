@@ -29,13 +29,16 @@ class NaiveBayesApp : public ci::app::App {
   const double kWindowSize = 875;
   const double kMargin = 100;
   const size_t kImageDimension = 28;
+  ~NaiveBayesApp();
 
  private:
   //Sketchpad sketchpad_;
 //  int current_prediction_ = -1;
   Sprite sprite_;
-  Pipe pipe_;
-  //std::vector<Pipe *> pipe_list_;
+  //Pipe pipe_;
+  std::vector<Pipe *> pipe_list_;
+  int counter;
+  bool start_game_ = false;
 };
 
 }  // namespace visualizer

@@ -8,6 +8,12 @@
 
 ../include/visualizer/pipe.h
 
+../include/visualizer/sprite.h
+cinder/gl/gl.h
+../include/visualizer/cinder/gl/gl.h
+visualizer/pipe.h
+../include/visualizer/visualizer/pipe.h
+
 /Users/phongtran/Downloads/cinder_0.9.2_mac/include/boost/assert.hpp
 boost/config.hpp
 -
@@ -7812,11 +7818,9 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 /Users/phongtran/Downloads/cinder_0.9.2_mac/include/glm/detail/func_vector_relational.inl
 
-/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/pipe.cpp
-visualizer/pipe.h
-/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/visualizer/pipe.h
-cinder/gl/gl.h
--
+/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/sprite.cpp
+visualizer/sprite.h
+/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/visualizer/sprite.h
 iostream
-/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/iostream
+-
 

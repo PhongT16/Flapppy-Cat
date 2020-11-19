@@ -10,6 +10,8 @@ namespace visualizer {
 
 class Pipe {
 public:
+
+  Pipe(double height);
   /**
    * Draws the Pipe
    */
@@ -20,6 +22,10 @@ public:
    */
   void UpdateLocation();
 
+  double GetPositionLeftSide();
+
+  double GetPositionRightSide();
+
 private:
   //int height_;
   //int width_;
@@ -28,6 +34,9 @@ private:
   double bottom_border_;
   double top_border_;*/
   double x = 0;
+  double left_side_ = 875.0;
+  double right_side_ = 905.0;
+  double height_;
 };
 }
 }

@@ -3,6 +3,7 @@
 //
 #pragma once
 #include "cinder/gl/gl.h"
+#include "visualizer/pipe.h"
 
 namespace naivebayes {
 
@@ -85,6 +86,11 @@ public:
     */
    bool GetGame();
 
+   /**
+    * Set
+    */
+    void SetPipe(Pipe & pipe);
+
 
 
 private:
@@ -98,6 +104,8 @@ private:
   const int kRadius;
 
   bool GameEnd = false;
+
+  //Pipe current_pipe_;
 
 };
 
