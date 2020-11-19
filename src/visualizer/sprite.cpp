@@ -11,21 +11,25 @@ namespace visualizer {
 Sprite::Sprite(glm::vec2 position, glm::vec2 velocity, int radius) : position_(position), velocity_(velocity), kRadius(radius) {}
 
 void Sprite::Draw() {
-  Drop();
   UpdatePosition();
   ci::gl::color(ci::Color("red"));
   ci::gl::drawSolidCircle(glm::vec2(position_.x, position_.y),
                            kRadius);
-
-
 }
 
 
 void Sprite::UpdatePosition() {
-  if (!CheckBorderCollision()) {
-    position_ += velocity_;
+  /*if (!CheckPipeCollision()|| !CheckBorderCollision()) {
+    Drop();
+    //position_ += velocity_;
   } else {
     GameEnd = true;
+  }*/
+
+  if (CheckPipeCollision() || CheckBorderCollision()) {
+    GameEnd = true;
+  } else {
+    Drop();
   }
 }
 
@@ -50,9 +54,10 @@ void Sprite::Drop() {
   position_.y += 0.5;
 }
 void Sprite::MoveUp() {
-  position_.y -= 10;
+  position_.y -= 30;
 }
 bool Sprite::CheckBorderCollision() {
+
   double top_border_y_ = 0;
   double bottom_border_y_ = 875;
   bool is_collision = false;
@@ -60,22 +65,42 @@ bool Sprite::CheckBorderCollision() {
   if (position_.y + velocity_.y - kRadius <= top_border_y_) {
     position_.y = top_border_y_ + kRadius;
     position_.x += velocity_.x;
-    /*velocity_.y *= -1;*/
-    is_collision = true;
     velocity_ = glm::vec2(0,0);
+    is_collision = true;
   } else if (position_.y + velocity_.y + kRadius >= bottom_border_y_) {
     position_.y = bottom_border_y_ - kRadius;
     position_.x += velocity_.x;
-    /*velocity_.y *= -1;*/
-    std::cout << "out of bound" << std::endl;
     velocity_ = glm::vec2(0,0);
-    std::cout << "position" << position_ << std::endl;
     is_collision = true;
   }
   return is_collision;
 }
 
 bool Sprite::GetGame() { return GameEnd; }
+
+bool Sprite::CheckPipeCollision() {
+
+  double top_border_y_ = 300;
+  double bottom_border_y_ = 637.5;
+  bool is_collision = false;
+
+  if (position_.y + velocity_.y - kRadius <= top_border_y_) {
+    position_.y = top_border_y_ + kRadius;
+    position_.x += velocity_.x;
+    velocity_ = glm::vec2(0,0);
+    is_collision = true;
+    velocity_ = glm::vec2(0,0);
+  } else if (position_.y + velocity_.y + kRadius >= bottom_border_y_) {
+    position_.y = bottom_border_y_ - kRadius;
+    position_.x += velocity_.x;
+    velocity_ = glm::vec2(0,0);
+    is_collision = true;
+  }
+
+
+  return is_collision;
+
+}
 
 }
 }

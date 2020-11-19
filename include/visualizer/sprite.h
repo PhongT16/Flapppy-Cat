@@ -68,9 +68,16 @@ public:
   void Drop();
 
   /**
-   *
+   * Checks for collisions with the walls
+   * @return whether the sprite has hit the border
    */
    bool CheckBorderCollision();
+
+   /**
+    * Checks for collisions with the pipes
+    * @return whether the sprite has hit the pipe
+    */
+   bool CheckPipeCollision();
 
    bool GetGame();
 
