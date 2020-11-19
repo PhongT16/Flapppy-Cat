@@ -13,7 +13,7 @@ namespace visualizer {
 Pipe::Pipe(double height) : height_(height) {}
 
 void Pipe::Draw() {
-  std::cout << "drawing" << std::endl;
+  //std::cout << "drawing" << std::endl;
   UpdateLocation();
 
   ci::gl::color(1, 1, 1); // set color to white
@@ -21,10 +21,9 @@ void Pipe::Draw() {
   //std::cout << "left_side_: " << left_side_ << std::endl;
   ci::gl::drawSolidRect(ci::Rectf(left_side_, 0, right_side_, height_));
 
-  std::cout << "LINE: " << __LINE__ << std::endl;
   ci::gl::color(1, 1, 1); // set color to white
   ci::gl::drawSolidRect(ci::Rectf(left_side_, height_ + 150, right_side_, 875));
-  std::cout << "LINE: " << __LINE__ << std::endl;
+
 
 }
 void Pipe::UpdateLocation() {
@@ -33,8 +32,8 @@ void Pipe::UpdateLocation() {
   right_side_ -= x;
 
 }
-double Pipe::GetPositionRightSide() { return right_side_; }
-double Pipe::GetPositionLeftSide() { return left_side_; }
+double Pipe::GetPositionRightSide() const { return right_side_; }
+double Pipe::GetPositionLeftSide() const { return left_side_; }
 
 }
 }

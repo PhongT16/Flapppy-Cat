@@ -91,6 +91,8 @@ public:
     */
     void SetPipe(Pipe & pipe);
 
+    bool HasPassedPipe(const Pipe & pipe);
+
 
 
 private:
@@ -105,7 +107,8 @@ private:
 
   bool GameEnd = false;
 
-  //Pipe current_pipe_;
+
+  Pipe current_pipe_;
 
 };
 

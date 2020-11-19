@@ -8,7 +8,7 @@ namespace naivebayes {
 
 namespace visualizer {
 
-Sprite::Sprite(glm::vec2 position, glm::vec2 velocity, int radius) : position_(position), velocity_(velocity), kRadius(radius) {}
+Sprite::Sprite(glm::vec2 position, glm::vec2 velocity, int radius) : position_(position), velocity_(velocity), kRadius(radius), current_pipe_(0) {}
 
 void Sprite::Draw() {
   UpdatePosition();
@@ -19,18 +19,12 @@ void Sprite::Draw() {
 
 
 void Sprite::UpdatePosition() {
-  /*if (!CheckPipeCollision()|| !CheckBorderCollision()) {
-    Drop();
-    //position_ += velocity_;
-  } else {
-    GameEnd = true;
-  }*/
-
   if (CheckPipeCollision() || CheckBorderCollision()) {
     GameEnd = true;
   } else {
     Drop();
   }
+
 }
 
 glm::vec2 Sprite::GetPosition() { return position_; }
@@ -81,10 +75,10 @@ bool Sprite::CheckBorderCollision() {
 bool Sprite::GetGame() { return GameEnd; }
 
 bool Sprite::CheckPipeCollision() {
-  //double top_border_y_ = 300;
-  //double bottom_border_y_ = 637.5;
+  double top_border_y_ = 300;
+  double bottom_border_y_ = 637.5;
   bool is_collision = false;
-/*
+
   if (position_.y + velocity_.y - kRadius <= top_border_y_ && position_.x >= current_pipe_.GetPositionLeftSide()
   && position_.x <= current_pipe_.GetPositionRightSide()) {
     //std::cout << "here" << std::endl;
@@ -92,14 +86,16 @@ bool Sprite::CheckPipeCollision() {
     position_.x += velocity_.x;
     velocity_ = glm::vec2(0,0);
     is_collision = true;
-    velocity_ = glm::vec2(0,0);
-  } else if (position_.y + velocity_.y + kRadius >= bottom_border_y_) {
+    std::cout << "top pipe" << std::endl;
+  } else if (position_.y + velocity_.y + kRadius >= bottom_border_y_ && position_.x >= current_pipe_.GetPositionLeftSide()
+             && position_.x <= current_pipe_.GetPositionRightSide()) {
     position_.y = bottom_border_y_ - kRadius;
     position_.x += velocity_.x;
     velocity_ = glm::vec2(0,0);
     is_collision = true;
+    std::cout << "bottom pipe" << std::endl;
   }
-*/
+
 
   return is_collision;
 
@@ -107,7 +103,17 @@ bool Sprite::CheckPipeCollision() {
 void Sprite::SetPipe(Pipe & pipe) {
 
   //std::cout << pipe.GetPositionLeftSide() << std::endl;
-  //current_pipe_ = pipe;
+  std::cout << "SetPipe" << std::endl;
+  current_pipe_ = pipe;
+}
+bool Sprite::HasPassedPipe(const Pipe &pipe) {
+  double mid = (pipe.GetPositionLeftSide() + pipe.GetPositionRightSide()) / 2;
+  if (mid <= position_.x) {
+    std::cout << "passed" << std::endl;
+    return true;
+  }
+
+  return false;
 }
 
 }

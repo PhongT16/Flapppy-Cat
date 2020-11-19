@@ -39,6 +39,8 @@ class NaiveBayesApp : public ci::app::App {
   std::vector<Pipe *> pipe_list_;
   int counter;
   bool start_game_ = false;
+  int score = 0;
+  std::vector<bool> visited;
 };
 
 }  // namespace visualizer

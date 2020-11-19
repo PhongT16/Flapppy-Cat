@@ -22,9 +22,9 @@ public:
    */
   void UpdateLocation();
 
-  double GetPositionLeftSide();
+  double GetPositionLeftSide() const ;
 
-  double GetPositionRightSide();
+  double GetPositionRightSide()const ;
 
 private:
   //int height_;
