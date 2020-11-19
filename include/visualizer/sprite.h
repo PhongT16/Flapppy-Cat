@@ -21,7 +21,7 @@ public:
    * Updates the location of the Sprite
    * @param position The new position of the sprite
    */
-  void UpdatePosition(glm::vec2 position);
+  void UpdatePosition();
 
   /**
    * Retrieves the current position of the sprite
@@ -56,8 +56,23 @@ public:
    */
   void MoveRight();
 
+  /**
+   * Moves the Sprite up
+   */
+  void MoveUp();
+
+  /**
+   * Drops the Sprite
+   */
 
   void Drop();
+
+  /**
+   *
+   */
+   bool CheckBorderCollision();
+
+   bool GetGame();
 
 
 
@@ -70,6 +85,8 @@ private:
 
   // The Radius of the object
   const int kRadius;
+
+  bool GameEnd = false;
 
 };
 
