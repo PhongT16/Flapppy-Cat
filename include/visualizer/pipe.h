@@ -10,7 +10,14 @@ namespace visualizer {
 
 class Pipe {
 public:
+  /**
+   * Draws the Pipe
+   */
   void Draw();
+
+  /**
+   * Updates the location of the pipe
+   */
   void UpdateLocation();
 
 private:

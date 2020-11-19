@@ -79,6 +79,10 @@ public:
     */
    bool CheckPipeCollision();
 
+   /**
+    * Whether the game has ended
+    * @return GameEnd
+    */
    bool GetGame();
 
 
