@@ -26,6 +26,10 @@ public:
 
   double GetPositionRightSide()const ;
 
+  double GetTopPipeBorder() const;
+
+  double GetBottomPipeBorder() const;
+
 private:
   //int height_;
   //int width_;

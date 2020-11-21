@@ -34,6 +34,8 @@ void Pipe::UpdateLocation() {
 }
 double Pipe::GetPositionRightSide() const { return right_side_; }
 double Pipe::GetPositionLeftSide() const { return left_side_; }
+double Pipe::GetTopPipeBorder() const { return height_; }
+double Pipe::GetBottomPipeBorder() const { return height_ + 150; }
 
 }
 }

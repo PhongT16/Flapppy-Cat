@@ -80,10 +80,10 @@ public:
     */
    bool CheckPipeCollision();
 
-   /**
-    * Whether the game has ended
-    * @return GameEnd
-    */
+  /**
+   * Whether the game has ended
+   * @return GameEnd
+   */
    bool GetGame();
 
    /**
@@ -91,7 +91,21 @@ public:
     */
     void SetPipe(Pipe & pipe);
 
+
+    /**
+     * Checks if the pipe has passed a pipe
+     * @param pipe
+     * @return Whether the sprite has just passed a pipe
+     */
+
     bool HasPassedPipe(const Pipe & pipe);
+
+    void InPipe();
+
+    /**
+     * Gets the score
+     */
+     int GetScore() const;
 
 
 
@@ -108,7 +122,9 @@ private:
   bool GameEnd = false;
 
 
-  Pipe current_pipe_;
+  Pipe * current_pipe_;
+
+  int score_ = 0;
 
 };
 

@@ -41,6 +41,7 @@ class NaiveBayesApp : public ci::app::App {
   bool start_game_ = false;
   int score = 0;
   std::vector<bool> visited;
+  //int pipe_idx_;
 };
 
 }  // namespace visualizer

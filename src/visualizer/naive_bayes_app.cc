@@ -37,36 +37,40 @@ void NaiveBayesApp::draw() {
       (*it)->Draw();
     }
 
-   /* if (!pipe_list_.empty()) {
-      for (auto it = pipe_list_.begin(); it != pipe_list_.end(); ++it) {
-        if (sprite_.HasPassedPipe(*(*it))) {
-          std::cout << "passed" << std::endl;
-          score++;
-        }
-      }
-    }*/
-    for (size_t i = 0; i < pipe_list_.size(); i++) {
-      if (!visited.at(i)) {
-        sprite_.SetPipe(*pipe_list_.at(i));
-      }
-    }
+    std::cout << "size:" << visited.size() << std::endl;
+   for (size_t i = 0; i < visited.size(); i++) {
+     std::cout << "value: " << visited.at(i) << std::endl;
+   }
+   //std::cout << "----------------------------" << std::endl;
 
-    for (size_t i = 0; i < pipe_list_.size(); i++) {
+  if (pipe_list_.size() == 1) {
+     sprite_.SetPipe(*pipe_list_.at(0));
+   }
 
 
+  for (size_t i = 0; i < pipe_list_.size(); i++) {
       if (!visited.at(i) && sprite_.HasPassedPipe(*pipe_list_.at(i))) {
+        //std::cout << "index: " << i << std::endl;
+        //std::cout << "Passed Pipe" << std::endl;
+        sprite_.SetPipe(*pipe_list_.at(i + 1));
+        //std::cout << "Current Pipe: " << pipe_list_.at(i) << std::endl;
+        //std::cout << "Next Pipe: " << pipe_list_.at(i + 1) << std::endl;
         visited.at(i) = true;
         score++;
+        break;
       }
-    }
+
+  }
+
+    std::cout << "----------------------------" << std::endl;
+
+
+
+
     counter++;
     ci::gl::drawStringCentered(std::to_string(score),
         glm::vec2(kWindowSize / 2, 200), ci::Color("black"));
 
-    // Check Collision
-    /*for (auto it = pipe_list_.begin(); it != pipe_list_.end(); ++it) {
-      sprite_.CheckPipeCollision(*(*it));
-    }*/
 
     //pipe_.Draw();
     //sprite_.SetPipe(pipe_);
