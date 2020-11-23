@@ -39,7 +39,7 @@ private:
   double top_border_;*/
   double x = 0;
   double left_side_ = 875.0;
-  double right_side_ = 905.0;
+  double right_side_ = 1075; // 905
   double height_;
 };
 }

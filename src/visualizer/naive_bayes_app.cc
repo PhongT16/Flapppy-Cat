@@ -11,18 +11,37 @@ using namespace ci;
 using namespace ci::app;
 
 NaiveBayesApp::NaiveBayesApp()
-    : sprite_(glm::vec2(kWindowSize / 2, 400.5), glm::vec2(0,1), 8){
+    : sprite_(glm::vec2(kWindowSize / 2 + 0.5, 400.5), glm::vec2(0,1), 8){
   ci::app::setWindowSize((int) kWindowSize, (int) kWindowSize);
   counter = 0;
-  /*ci::gl::Texture myImage;
-  myImage = gl::Texture( loadImage( loadResource( "data/background.jpeg" ) ) );
-  gl::draw( myImage, getWindowBounds());*/
+
+  //gl::Texture texture = loadImage("data/background.jpeg");
+  //gl::draw(texture);
+}
+
+void NaiveBayesApp::setup() {
+  //texture = ci::loadImage("data/background.jpeg");
+  //ci::gl::Texture2dRef myImage;
+  //myImage = gl::Texture2d::create(loadImage(loadResource("resources/pic.png")));
+  //console() << "Path: " << getResourcePath("") << std::endl;
+  //gl::draw( myImage, getWindowBounds());
+  //std::cout << "here" << std::endl;
+  fs::path path = fs::path("./pic.jpg");
+  auto img = loadImage(path);
+  //fs::path path = fs::path("resources/pic.jpg");
+  //gl::TextureRef texture = gl::Texture::create(loadImage(path));
+  //gl::Texture2dRef texture = gl::Texture2d::create( loadImage(  loadResource("pic.png"  )) );
+
+
+  //gl::Texture texture = loadImage("resources/pic.png");
+  //gl::draw(texture);
 }
 
 void NaiveBayesApp::draw() {
+  //gl::Texture2d texture = loadImage("data/background.jpeg");
   ci::Color8u background_color(255, 246, 148);  // light yellow
   ci::gl::clear(background_color);
-  if (start_game_) {
+  if (start_game_ && !sprite_.GetGame()) {
     if (counter == 400) {
       srand (time(NULL));
       int height = rand() % 475 + 200;
@@ -37,9 +56,9 @@ void NaiveBayesApp::draw() {
       (*it)->Draw();
     }
 
-    std::cout << "size:" << visited.size() << std::endl;
+   // std::cout << "size:" << visited.size() << std::endl;
    for (size_t i = 0; i < visited.size(); i++) {
-     std::cout << "value: " << visited.at(i) << std::endl;
+     //std::cout << "value: " << visited.at(i) << std::endl;
    }
    //std::cout << "----------------------------" << std::endl;
 
@@ -62,7 +81,7 @@ void NaiveBayesApp::draw() {
 
   }
 
-    std::cout << "----------------------------" << std::endl;
+    //std::cout << "----------------------------" << std::endl;
 
 
 
@@ -74,15 +93,21 @@ void NaiveBayesApp::draw() {
 
     //pipe_.Draw();
     //sprite_.SetPipe(pipe_);
-    if (!sprite_.GetGame()) {
+    /*if (!sprite_.GetGame()) {
       sprite_.Draw();
     } else {
       sprite_.Draw();
       ci::gl::drawStringCentered(
           "GAME OVER",
           glm::vec2(kWindowSize / 2, kWindowSize / 2), ci::Color("black"));
-    }
+    }*/
+    sprite_.Draw();
 
+  } else if (sprite_.GetGame()) {
+    //sprite_.Draw();
+    ci::gl::drawStringCentered(
+        "GAME OVER",
+        glm::vec2(kWindowSize / 2, kWindowSize / 2), ci::Color("black"));
   } else {
     ci::gl::drawStringCentered(
         "PRESS ENTER TO START GAME",
@@ -126,6 +151,7 @@ NaiveBayesApp::~NaiveBayesApp() {
     temp = NULL;
   }
 }
+
 
 }  // namespace visualizer
 

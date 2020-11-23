@@ -13,12 +13,12 @@ cinder/app/RendererGl.h
 ../include/visualizer/cinder/app/RendererGl.h
 cinder/gl/gl.h
 ../include/visualizer/cinder/gl/gl.h
+pipe.h
+../include/visualizer/pipe.h
 sketchpad.h
 ../include/visualizer/sketchpad.h
 sprite.h
 ../include/visualizer/sprite.h
-pipe.h
-../include/visualizer/pipe.h
 vector
 -
 
@@ -8122,11 +8122,5 @@ cinder/ImageIo.h
 cinder/gl/Texture.h
 /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/cinder/gl/Texture.h
 string
--
-
-/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/sprite.cpp
-visualizer/sprite.h
-/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/visualizer/sprite.h
-iostream
 -
 

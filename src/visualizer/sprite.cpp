@@ -20,7 +20,6 @@ void Sprite::Draw() {
 
 void Sprite::UpdatePosition() {
   if (CheckPipeCollision() || CheckBorderCollision()) {
-    std::cout << "Collision" << std::endl;
     GameEnd = true;
   } else {
     Drop();
@@ -76,57 +75,32 @@ bool Sprite::CheckBorderCollision() {
 bool Sprite::GetGame() { return GameEnd; }
 
 bool Sprite::CheckPipeCollision() {
-  //double top_border_y_ = 300;
-  //double bottom_border_y_ = 637.5;
   bool is_collision = false;
 
   if (current_pipe_ != NULL) {
-
-   // std::cout << "position_.x: " << position_.x << std::endl;
-   // std::cout << " current_pipe_.GetPositionLeftSide(): " << current_pipe_->GetPositionLeftSide() << std::endl;
-
-
-    if (position_.x >= current_pipe_->GetPositionLeftSide() && position_.y <= current_pipe_->GetTopPipeBorder()) {
-      std::cout << "Collide Pipe" << std::endl;
+    if (position_.x == current_pipe_->GetPositionLeftSide() && position_.y <= current_pipe_->GetTopPipeBorder()) {
       is_collision = true;
-    } else if (position_.x >= current_pipe_->GetPositionLeftSide() && position_.y >= current_pipe_->GetBottomPipeBorder()) {
-      std::cout << "Collide Pipe" << std::endl;
+    } else if (position_.x == current_pipe_->GetPositionLeftSide() && position_.y >= current_pipe_->GetBottomPipeBorder()) {
       is_collision = true;
     }
+
+    // Checks to see if sprite hits the inside of the pipe
+    if (position_.x >= current_pipe_->GetPositionLeftSide() && position_.x <= current_pipe_->GetPositionRightSide()) {
+      if (position_.y <= current_pipe_->GetTopPipeBorder() || position_.y >= current_pipe_->GetBottomPipeBorder()) {
+        is_collision = true;
+      }
+    }
+
+
   }
-
-
-
-  /*if (position_.y + velocity_.y - kRadius <= top_border_y_ && position_.x >= current_pipe_.GetPositionLeftSide()
-  && position_.x <= current_pipe_.GetPositionRightSide()) {
-    //std::cout << "here" << std::endl;
-    position_.y = top_border_y_ + kRadius;
-    position_.x += velocity_.x;
-    velocity_ = glm::vec2(0,0);
-    is_collision = true;
-    std::cout << "top pipe" << std::endl;
-  } else if (position_.y + velocity_.y + kRadius >= bottom_border_y_ && position_.x >= current_pipe_.GetPositionLeftSide()
-             && position_.x <= current_pipe_.GetPositionRightSide()) {
-    position_.y = bottom_border_y_ - kRadius;
-    position_.x += velocity_.x;
-    velocity_ = glm::vec2(0,0);
-    is_collision = true;
-    std::cout << "bottom pipe" << std::endl;
-  }*/
-
-
   return is_collision;
 
 }
 void Sprite::SetPipe(Pipe & pipe) {
-  std::cout << "Pipe memory location: " << &pipe << std::endl;
-
-  //std::cout << pipe.GetPositionLeftSide() << std::endl;
-  //std::cout << "SetPipe" << std::endl;
   current_pipe_ = &pipe;
 }
 bool Sprite::HasPassedPipe(const Pipe & pipe) {
-  double mid = (pipe.GetPositionLeftSide() + pipe.GetPositionRightSide()) / 2;
+  double mid = ((pipe.GetPositionLeftSide() + pipe.GetPositionRightSide()) / 2) + 100;
   if (mid <= position_.x) {
     return true;
   }
