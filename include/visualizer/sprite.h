@@ -87,7 +87,7 @@ public:
    bool GetGame();
 
    /**
-    * Set
+    * Set the current pipe
     */
     void SetPipe(Pipe & pipe);
 
@@ -100,12 +100,10 @@ public:
 
     bool HasPassedPipe(const Pipe & pipe);
 
-    void InPipe();
+    void ResetGame();
 
-    /**
-     * Gets the score
-     */
-     int GetScore() const;
+    glm::vec2 Update();
+
 
 
 
@@ -124,7 +122,14 @@ private:
 
   Pipe * current_pipe_;
 
-  int score_ = 0;
+  glm::vec2 next_position_;
+
+  glm::vec2 lerp_;
+
+  bool move_ = false;
+
+//
+// int score_ = 0;
 
 };
 

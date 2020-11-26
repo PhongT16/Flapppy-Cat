@@ -26,25 +26,23 @@ class NaiveBayesApp : public ci::app::App {
   void mouseDrag(ci::app::MouseEvent event) override;
   void keyDown(ci::app::KeyEvent event) override;
 
+  void replay();
+  void clear();
+
   // TODO: Delete this comment. Feel free to play around with these variables
   // provided that you can see the entire UI on your screen.
-  const double kWindowSize = 875;
-  const double kMargin = 100;
-  const size_t kImageDimension = 28;
+  const double kWindowSize = 650;
   ~NaiveBayesApp();
 
  private:
-  //Sketchpad sketchpad_;
-//  int current_prediction_ = -1;
   Sprite sprite_;
-  //Pipe pipe_;
   std::vector<Pipe *> pipe_list_;
   int counter;
   bool start_game_ = false;
   int score = 0;
   std::vector<bool> visited;
-  //int pipe_idx_;
-  //ci::gl::Texture texture;
+  bool Game_End_ = false;
+  int highcore_ = 0;
 };
 
 }  // namespace visualizer
