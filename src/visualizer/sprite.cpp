@@ -22,6 +22,7 @@ void Sprite::Draw() {
     position_.y -= lerp_.y;
     ci::gl::drawSolidCircle(glm::vec2(position_.x, position_.y),kRadius);
     std::cout << "first condition" << std::endl;
+
   } else {
     move_ = false;
     std::cout << "second condition" << std::endl;
@@ -31,6 +32,7 @@ void Sprite::Draw() {
   }
   //std::cout << "Expected Position: " << next_position_ << std::endl;
   //std::cout << "Final Position: " << position_ << std::endl;
+
 }
 
 

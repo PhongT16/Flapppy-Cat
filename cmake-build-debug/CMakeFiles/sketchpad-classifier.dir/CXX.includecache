@@ -19,6 +19,8 @@ sketchpad.h
 ../include/visualizer/sketchpad.h
 sprite.h
 ../include/visualizer/sprite.h
+cinder/gl/gl.h
+-
 vector
 -
 

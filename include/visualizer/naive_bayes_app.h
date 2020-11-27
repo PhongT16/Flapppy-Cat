@@ -7,6 +7,7 @@
 #include "sketchpad.h"
 #include "sprite.h"
 //#import <cinder/gl/Texture.h>
+#include <cinder/gl/gl.h>
 #include <vector>
 namespace naivebayes {
 
@@ -43,6 +44,13 @@ class NaiveBayesApp : public ci::app::App {
   std::vector<bool> visited;
   bool Game_End_ = false;
   int highcore_ = 0;
+
+  std::string				mText;
+  cinder::gl::TextureRef		mTextTexture;
+  glm::vec2				mSize;
+  ci::Font				mFont;
+  ci::gl::TextureRef mTexture;
+
 };
 
 }  // namespace visualizer

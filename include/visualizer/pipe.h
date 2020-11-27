@@ -30,11 +30,14 @@ public:
 
   double GetBottomPipeBorder() const;
 
+  void SetSpeed(int value);
+
 private:
   double left_side_ = 650.0;
   double right_side_ = 750.0; // 905
   int height_;
-  const int pipe_distance_ = 110;
+  const int pipe_distance_ = 90;
+  int speed = 1;
 };
 }
 }

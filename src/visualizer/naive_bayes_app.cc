@@ -11,7 +11,7 @@ using namespace ci;
 using namespace ci::app;
 
 NaiveBayesApp::NaiveBayesApp()
-    : sprite_(glm::vec2(kWindowSize / 2 + 0.5, 400.5), glm::vec2(0,1), 8){
+    : sprite_(glm::vec2(kWindowSize / 2 + 0.5, 400.5), glm::vec2(0,1), 10){
   ci::app::setWindowSize((int) kWindowSize, (int) kWindowSize);
   counter = 0;
 
@@ -20,29 +20,48 @@ NaiveBayesApp::NaiveBayesApp()
 }
 
 void NaiveBayesApp::setup() {
-  //texture = ci::loadImage("data/background.jpeg");
-  //ci::gl::Texture2dRef myImage;
-  //myImage = gl::Texture2d::create(loadImage(loadResource("resources/pic.png")));
-  //console() << "Path: " << getResourcePath("") << std::endl;
-  //gl::draw( myImage, getWindowBounds());
-  //std::cout << "here" << std::endl;
-  //fs::path path = fs::path("./pic.jpg");
-  //auto img = loadImage(path);
-  //fs::path path = fs::path("resources/pic.jpg");
-  //gl::TextureRef texture = gl::Texture::create(loadImage(path));
-  //gl::Texture2dRef texture = gl::Texture2d::create( loadImage(  loadResource("pic.png"  )) );
+  mText = "Here is some text that is larger than can fit naturally inside of 100 pixels.\nHere are some unicode code points: \303\251\303\241\303\250\303\240\303\247";
+  mFont = Font( "Times New Roman", 30 );
+  mTexture = gl::Texture::create( loadImage( "/Users/phongtran/Desktop/siebel.png" ) ); // /Users/phongtran/Desktop/background.jpeg3
+  //mTexture = gl::Texture::create( loadImage( "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/background.jpeg" ) ); // /Users/phongtran/Desktop/background.jpeg3
+  std::cout << "value: " << getWindowBounds() << std::endl;
+/*#if defined( CINDER_COCOA )
+  mFont = Font( "Times New Roman", 30 );
+#else
+  mFont = Font( "Times New Roman", 24 );
+#endif
+  mSize = vec2( 200, 200 );*/
 
-
-  //gl::Texture texture = loadImage("resources/pic.png");
-  //gl::draw(texture);
 }
 
 void NaiveBayesApp::draw() {
 
 
   //gl::Texture2d texture = loadImage("data/background.jpeg");
-  ci::Color8u background_color(255, 246, 148);  // light yellow
-  ci::gl::clear(background_color);
+  //ci::Color8u background_color(255, 246, 148);  // light yellow
+
+
+  ci::gl::clear();
+
+  //gl::enableAlphaBlending();
+
+  if( mTexture ) {
+    //Rectf destRect = Rectf( mTexture->getBounds() ).getCenteredFit( getWindowBounds(), true ).scaledCentered( 0.85f );
+    //ci::gl::color(255,255,255, 0.1); // set color to white
+
+    gl::color(Color::white());
+    Rectf destRect = Rectf( mTexture->getBounds() ).getCenteredFit( getWindowBounds(), true ).scaledCentered( 1.5f );
+    gl::draw( mTexture, destRect );
+
+  }
+
+
+  /*TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 100 , 100) ).text( mText );
+  tbox.setColor( Color( 1.0f, 0.65f, 0.35f ) );
+  tbox.setBackgroundColor( ColorA( 0.5, 0, 0, 1 ) );
+  mTextTexture = gl::Texture2d::create( tbox.render() );
+  if( mTextTexture )
+    gl::draw( mTextTexture, glm::vec2(100, 100) );*/
 
   //sprite_.Draw();
 
@@ -80,10 +99,19 @@ void NaiveBayesApp::draw() {
       }
     //std::cout << "--------------------------" << std::endl;
     }
-
   counter++;
-  ci::gl::drawStringCentered(std::to_string(score),
-      glm::vec2(kWindowSize / 2, 200), ci::Color("black"));
+
+
+
+    TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 50 , 50) ).text(std::to_string(score));
+    tbox.setColor( Color( 0.0f, 0.0f, 0.0f ) );
+    mTextTexture = gl::Texture2d::create( tbox.render() );
+    if( mTextTexture )
+      gl::draw( mTextTexture, glm::vec2(kWindowSize / 2 - 25, 100) );
+
+
+  /*ci::gl::drawStringCentered(std::to_string(score),
+      glm::vec2(kWindowSize / 2, 200), ci::Color("black"));*/
 
     sprite_.Draw();
 
@@ -95,25 +123,29 @@ void NaiveBayesApp::draw() {
     }
 
     counter++;
-    ci::gl::drawStringCentered(std::to_string(score),
-                               glm::vec2(kWindowSize / 2, kWindowSize / 2 + 50), ci::Color("black"));
 
-    ci::gl::drawStringCentered(
-        "GAME OVER",
-        glm::vec2(kWindowSize / 2, kWindowSize / 2), ci::Color("black"));
+    TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 200 , 50) ).text("GAME OVER");
+    tbox.setColor( Color( 0.0f, 0.0f, 0.0f ) );
+    gl::draw( gl::Texture2d::create( tbox.render() ), glm::vec2(kWindowSize / 2 - 100, kWindowSize / 2) );
+
+    TextBox tbox2 = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 200 , 50) ).text("Score: " + std::to_string(score));
+    tbox2.setColor( Color( 0.0f, 0.0f, 0.0f ) );
+    gl::draw( gl::Texture2d::create( tbox2.render() ), glm::vec2(kWindowSize / 2 - 100, kWindowSize / 2 + 50) );
+
+
 
     highcore_ = score;
   } else {
-    ci::gl::drawStringCentered(
-        "PRESS ENTER TO START GAME",
-        glm::vec2(kWindowSize / 2, kWindowSize / 2), ci::Color("black"));
+    TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( Font( "Times New Roman", 17 ) ).size( ivec2( 500 , 50) ).text("PRESS ENTER TO START GAME");
+    tbox.setColor( Color( 0.0f, 0.0f, 0.0f ) );
+    gl::draw( gl::Texture2d::create( tbox.render() ), glm::vec2(kWindowSize / 2 - 250, kWindowSize / 2 - 150) );
 
-    ci::gl::drawStringCentered(std::to_string(highcore_),
-                               glm::vec2(kWindowSize / 2, 200), ci::Color("black"));
+    TextBox tbox2 = TextBox().alignment( TextBox::CENTER ).font( Font( "Times New Roman", 17 ) ).size( ivec2( 200 , 50) ).text("High Score: " + std::to_string(highcore_));
+    tbox2.setColor( Color( 0.0f, 0.0f, 0.0f ) );
+    gl::draw( gl::Texture2d::create( tbox2.render() ), glm::vec2(kWindowSize / 2 - 100, kWindowSize / 2 -100) );
+
 
   }
-  std::cout << "------------------------" << std::endl;
-
 }
 
 void NaiveBayesApp::mouseDown(ci::app::MouseEvent event) {

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/0181007C-16AB-4F95-A039-B26AF8FF9800/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/0181007C-16AB-4F95-A039-B26AF8FF9800/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/0181007C-16AB-4F95-A039-B26AF8FF9800/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
