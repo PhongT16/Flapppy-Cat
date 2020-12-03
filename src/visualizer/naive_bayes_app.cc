@@ -55,7 +55,7 @@ void NaiveBayesApp::draw() {
 
   if (start_game_ && !sprite_.GetGame()) {
     // Spawn a new pipe every 300 hundred pixels
-    //DeletePipe();
+    DeletePipe();
 
     if (counter == 300) {
       srand (time(NULL));
@@ -68,15 +68,26 @@ void NaiveBayesApp::draw() {
 
     }
 
-
     for (auto it = pipe_list_.begin(); it != pipe_list_.end(); ++it) {
-      (*it)->Draw(false);
+      if (*it != nullptr) {
+        (*it)->Draw(false);
+      }
+      //(*it)->Draw(false);
     }
 
-
-
     for (size_t i = 0; i < pipe_list_.size(); i++) {
-      if (pipe_list_.size() == 1) {
+      if (pipe_list_.at(i) != nullptr) {
+        if (pipe_list_.size() == 1) {
+          sprite_.SetPipe(*pipe_list_.at(i));
+        } else if (!visited.at(i) && sprite_.HasPassedPipe(*pipe_list_.at(i))) {
+          std::cout << "PASSED PIPE" << std::endl;
+          sprite_.SetPipe(*pipe_list_.at(i + 1));
+          visited.at(i) = true;
+          score++;
+          break;
+        }
+      }
+      /*if (pipe_list_.size() == 1) {
         sprite_.SetPipe(*pipe_list_.at(i));
       } else if (!visited.at(i) && sprite_.HasPassedPipe(*pipe_list_.at(i))) {
         std::cout << "PASSED PIPE" << std::endl;
@@ -84,11 +95,9 @@ void NaiveBayesApp::draw() {
         visited.at(i) = true;
         score++;
         break;
-      }
+      }*/
     }
   counter++;
-
-
 
     TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 50 , 50) ).text(std::to_string(score));
     tbox.setColor( Color( 0.0f, 0.0f, 0.0f ) );
@@ -103,7 +112,10 @@ void NaiveBayesApp::draw() {
     Game_End_ = true;
     sprite_.Draw();
     for (auto it = pipe_list_.begin(); it != pipe_list_.end(); ++it) {
-      (*it)->Draw(true);
+      if (*it != nullptr) {
+        (*it)->Draw(true);
+      }
+      //(*it)->Draw(true);
     }
 
     counter++;
@@ -182,6 +194,9 @@ void NaiveBayesApp::replay() {
 void NaiveBayesApp::clear() {
   std::cout << "In clear" << std::endl;
   for (size_t i = 0; i < pipe_list_.size(); i++) {
+    if (pipe_list_.at(i) == nullptr) {
+      continue;
+    }
     Pipe * temp = pipe_list_.at(i);
     delete temp;
     pipe_list_.at(i) = NULL;
@@ -194,9 +209,10 @@ void NaiveBayesApp::clear() {
 void NaiveBayesApp::DeletePipe() {
 
   for (unsigned i = 0; i < pipe_list_.size(); i++) {
-    if (pipe_list_.at(i)->GetPositionRightSide() < 0) {
+    if (pipe_list_.at(i) !=
+        nullptr && pipe_list_.at(i)->GetPositionRightSide() < 0) {
       delete pipe_list_.at(i);
-      pipe_list_.erase(pipe_list_.begin() + i);
+      pipe_list_.at(i) = nullptr;
       break;
     }
   }

@@ -1,4 +1,4 @@
-/private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug
