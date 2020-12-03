@@ -35,6 +35,12 @@ class NaiveBayesApp : public ci::app::App {
   const double kWindowSize = 650;
   ~NaiveBayesApp();
 
+  /**
+   * Deletes pipes that have gone out of frame
+   */
+
+  void DeletePipe();
+
  private:
   Sprite sprite_;
   std::vector<Pipe *> pipe_list_;

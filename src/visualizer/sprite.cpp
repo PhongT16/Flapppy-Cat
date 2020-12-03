@@ -11,38 +11,24 @@ namespace visualizer {
 Sprite::Sprite(glm::vec2 position, glm::vec2 velocity, int radius) : position_(position), velocity_(velocity), kRadius(radius), current_pipe_(0), next_position_(position) {}
 
 void Sprite::Draw() {
-  UpdatePosition();
-  //ci::gl::color(ci::Color("red"));
- // ci::gl::drawSolidCircle(glm::vec2(position_.x, position_.y),
-   //                       kRadius);
-
-
+  CollisionDetection();
   if (position_.y > next_position_.y && move_) {
     ci::gl::color(ci::Color("red"));
     position_.y -= lerp_.y;
     ci::gl::drawSolidCircle(glm::vec2(position_.x, position_.y),kRadius);
-    std::cout << "first condition" << std::endl;
-
   } else {
     move_ = false;
-    std::cout << "second condition" << std::endl;
     Drop();
     ci::gl::color(ci::Color("red"));
     ci::gl::drawSolidCircle(glm::vec2(position_.x, position_.y),kRadius);
   }
-  //std::cout << "Expected Position: " << next_position_ << std::endl;
-  //std::cout << "Final Position: " << position_ << std::endl;
-
 }
 
 
-void Sprite::UpdatePosition() {
+void Sprite::CollisionDetection() {
   if (CheckPipeCollision() || CheckBorderCollision()) {
     GameEnd = true;
-  } /*else {
-    Drop();
-  }*/
-
+  }
 }
 
 glm::vec2 Sprite::GetPosition() { return position_; }
@@ -67,8 +53,9 @@ void Sprite::Drop() {
   velocity_.y = 3;
   position_.y +=  velocity_.y;
 }
+
 void Sprite::MoveUp() {
-  Update();
+  RelativeLerpUp();
   move_ = true;
   //position_.y -= 60;
   //position_.y = temp.y;
@@ -130,6 +117,7 @@ bool Sprite::CheckPipeCollision() {
 void Sprite::SetPipe(Pipe & pipe) {
   current_pipe_ = &pipe;
 }
+
 bool Sprite::HasPassedPipe(const Pipe & pipe) {
   //double mid = ((pipe.GetPositionLeftSide() + pipe.GetPositionRightSide()) / 2) + 100;
   if ( pipe.GetPositionRightSide() <= position_.x) {
@@ -145,20 +133,14 @@ void Sprite::ResetGame() {
   position_.y = 400.5;
 }
 
-glm::vec2 Sprite::Update() {
+glm::vec2 Sprite::RelativeLerpUp() {
+  // Relative Lerp
   glm::vec2 start_position = position_;
   next_position_ = position_ + glm::vec2(0, -60);
-  //float x = ci::lerp(position_.x, next_position_.x, 0.5);
-  //float y = ci::lerp(position_.y, next_position_.y, 0.5);
   float x = 0.1 * (position_.x - next_position_.x);
   float y = 0.1 * (position_.y - next_position_.y);
-  std::cout << "Current Position: " << position_ << std::endl;
-  std::cout << "Next Position: " << next_position_ << std::endl;
-  std::cout << x << std::endl;
-  std::cout << y << std::endl;
-  lerp_ = glm::vec2(x,y);
-  std::cout << "------------------------" << std::endl;
 
+  lerp_ = glm::vec2(x,y);
   return glm::vec2(x, y);
 
 

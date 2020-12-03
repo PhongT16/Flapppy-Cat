@@ -46,29 +46,17 @@ void NaiveBayesApp::draw() {
   //gl::enableAlphaBlending();
 
   if( mTexture ) {
-    //Rectf destRect = Rectf( mTexture->getBounds() ).getCenteredFit( getWindowBounds(), true ).scaledCentered( 0.85f );
-    //ci::gl::color(255,255,255, 0.1); // set color to white
-
     gl::color(Color::white());
     Rectf destRect = Rectf( mTexture->getBounds() ).getCenteredFit( getWindowBounds(), true ).scaledCentered( 1.5f );
     gl::draw( mTexture, destRect );
-
   }
 
 
-  /*TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 100 , 100) ).text( mText );
-  tbox.setColor( Color( 1.0f, 0.65f, 0.35f ) );
-  tbox.setBackgroundColor( ColorA( 0.5, 0, 0, 1 ) );
-  mTextTexture = gl::Texture2d::create( tbox.render() );
-  if( mTextTexture )
-    gl::draw( mTextTexture, glm::vec2(100, 100) );*/
-
-  //sprite_.Draw();
 
   if (start_game_ && !sprite_.GetGame()) {
-
-    //std::cout << "counter: " << counter << std::endl;
     // Spawn a new pipe every 300 hundred pixels
+    //DeletePipe();
+
     if (counter == 300) {
       srand (time(NULL));
       int height = rand() % 400 + 100;
@@ -97,7 +85,6 @@ void NaiveBayesApp::draw() {
         score++;
         break;
       }
-    //std::cout << "--------------------------" << std::endl;
     }
   counter++;
 
@@ -109,9 +96,6 @@ void NaiveBayesApp::draw() {
     if( mTextTexture )
       gl::draw( mTextTexture, glm::vec2(kWindowSize / 2 - 25, 100) );
 
-
-  /*ci::gl::drawStringCentered(std::to_string(score),
-      glm::vec2(kWindowSize / 2, 200), ci::Color("black"));*/
 
     sprite_.Draw();
 
@@ -131,8 +115,6 @@ void NaiveBayesApp::draw() {
     TextBox tbox2 = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 200 , 50) ).text("Score: " + std::to_string(score));
     tbox2.setColor( Color( 0.0f, 0.0f, 0.0f ) );
     gl::draw( gl::Texture2d::create( tbox2.render() ), glm::vec2(kWindowSize / 2 - 100, kWindowSize / 2 + 50) );
-
-
 
     highcore_ = score;
   } else {
@@ -208,6 +190,16 @@ void NaiveBayesApp::clear() {
   pipe_list_.clear();
   visited.clear();
   score = 0;
+}
+void NaiveBayesApp::DeletePipe() {
+
+  for (unsigned i = 0; i < pipe_list_.size(); i++) {
+    if (pipe_list_.at(i)->GetPositionRightSide() < 0) {
+      delete pipe_list_.at(i);
+      pipe_list_.erase(pipe_list_.begin() + i);
+      break;
+    }
+  }
 }
 
 }  // namespace visualizer

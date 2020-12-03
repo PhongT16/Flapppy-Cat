@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -139,9 +139,22 @@ CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/pipe.cpp -o CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.s
 
+CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o: CMakeFiles/naive-bayes-test.dir/flags.make
+CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o: ../src/visualizer/vertical_game_mode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp
+
+CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp > CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.i
+
+CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp -o CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.s
+
 CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o: CMakeFiles/naive-bayes-test.dir/flags.make
 CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o: ../tests/rename_this_test_file.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/tests/rename_this_test_file.cc
 
 CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.i: cmake_force
@@ -160,6 +173,7 @@ naive__bayes__test_OBJECTS = \
 "CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o" \
 "CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o" \
 "CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.o" \
+"CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o" \
 "CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o"
 
 # External object files for target naive-bayes-test
@@ -171,13 +185,14 @@ Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMa
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.o
+Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/build.make
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: /Users/phongtran/Downloads/cinder_0.9.2_mac/lib/macosx/Debug/libcinder.a
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: /Users/phongtran/Downloads/cinder_0.9.2_mac/lib/macosx/libboost_system.a
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: /Users/phongtran/Downloads/cinder_0.9.2_mac/lib/macosx/libboost_filesystem.a
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/naive-bayes-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

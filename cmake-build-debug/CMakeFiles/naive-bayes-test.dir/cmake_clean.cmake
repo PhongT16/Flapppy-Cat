@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.o"
   "CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o"
   "CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o"
+  "CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o"
   "CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o"
   "CMakeFiles/naive-bayes-test.dir/tests/test_main.cc.o"
   "Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test"

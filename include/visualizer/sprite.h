@@ -19,10 +19,10 @@ public:
   Sprite(glm::vec2 position, glm::vec2 velocity, int radius);
 
   /**
-   * Updates the location of the Sprite
+   * Checks whether there is pipe or border collision
    * @param position The new position of the sprite
    */
-  void UpdatePosition();
+  void CollisionDetection();
 
   /**
    * Retrieves the current position of the sprite
@@ -100,9 +100,18 @@ public:
 
     bool HasPassedPipe(const Pipe & pipe);
 
+    /**
+     * Resets the game state of the sprite object
+     */
+
     void ResetGame();
 
-    glm::vec2 Update();
+    /**
+     * Calculates the relative lerp value for any up movement
+     * @return The Relative Lerp Vector
+     */
+
+    glm::vec2 RelativeLerpUp();
 
 
 

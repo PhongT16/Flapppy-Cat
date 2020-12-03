@@ -55,7 +55,8 @@ list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
                             src/visualizer/naive_bayes_app.cc
                             src/visualizer/sketchpad.cc
         src/visualizer/sprite.cpp
-        src/visualizer/pipe.cpp)
+        src/visualizer/pipe.cpp
+        src/visualizer/vertical_game_mode.cpp)
 
 list(APPEND TEST_FILES tests/rename_this_test_file.cc)
 

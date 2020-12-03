@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/9z/t2v795kn50b92vbm686c2n0c0000gn/T/AppTranslocation/7F994CF3-6A62-460B-8299-20694EDBAB63/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -356,6 +356,36 @@ src/visualizer/sprite.cpp.s:
 	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.s
 .PHONY : src/visualizer/sprite.cpp.s
 
+src/visualizer/vertical_game_mode.o: src/visualizer/vertical_game_mode.cpp.o
+
+.PHONY : src/visualizer/vertical_game_mode.o
+
+# target to build an object file
+src/visualizer/vertical_game_mode.cpp.o:
+	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o
+	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o
+.PHONY : src/visualizer/vertical_game_mode.cpp.o
+
+src/visualizer/vertical_game_mode.i: src/visualizer/vertical_game_mode.cpp.i
+
+.PHONY : src/visualizer/vertical_game_mode.i
+
+# target to preprocess a source file
+src/visualizer/vertical_game_mode.cpp.i:
+	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.i
+	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.i
+.PHONY : src/visualizer/vertical_game_mode.cpp.i
+
+src/visualizer/vertical_game_mode.s: src/visualizer/vertical_game_mode.cpp.s
+
+.PHONY : src/visualizer/vertical_game_mode.s
+
+# target to generate assembly for a file
+src/visualizer/vertical_game_mode.cpp.s:
+	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.s
+	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.s
+.PHONY : src/visualizer/vertical_game_mode.cpp.s
+
 tests/rename_this_test_file.o: tests/rename_this_test_file.cc.o
 
 .PHONY : tests/rename_this_test_file.o
@@ -442,6 +472,9 @@ help:
 	@echo "... src/visualizer/sprite.o"
 	@echo "... src/visualizer/sprite.i"
 	@echo "... src/visualizer/sprite.s"
+	@echo "... src/visualizer/vertical_game_mode.o"
+	@echo "... src/visualizer/vertical_game_mode.i"
+	@echo "... src/visualizer/vertical_game_mode.s"
 	@echo "... tests/rename_this_test_file.o"
 	@echo "... tests/rename_this_test_file.i"
 	@echo "... tests/rename_this_test_file.s"
