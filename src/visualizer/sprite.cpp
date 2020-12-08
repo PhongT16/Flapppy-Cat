@@ -61,7 +61,7 @@ bool Sprite::CheckBorderCollision() {
   double bottom_border_y_ = kWindowSize;
   bool is_collision = false;
 
-  if (position_.y + velocity_.y - kApothem <= top_border_y_) {
+  if (isLerpActive && position_.y - kApothem - lerp_.y <= top_border_y_) {
     position_.y = top_border_y_ + kApothem;
     position_.x += velocity_.x;
     velocity_ = glm::vec2(0, 0);
@@ -101,11 +101,11 @@ bool Sprite::CheckPipeCollision() {
     // Checks for internal collision with pipe
     if (position_.x >= current_pipe_->GetPositionLeftSide() &&
         position_.x - kApothem <= current_pipe_->GetPositionRightSide()) {
-      if (position_.y - kApothem <= current_pipe_->GetTopPipeBorder()) {
+      if (isLerpActive && position_.y - kApothem - lerp_.y <= current_pipe_->GetTopPipeBorder()) {
         position_.y = current_pipe_->GetTopPipeBorder() + kApothem;
         velocity_ = glm::vec2(0, 0);
         has_collided = true;
-      } else if (position_.y + kApothem >=
+      } else if (position_.y + kApothem + velocity_.y >=
                  current_pipe_->GetBottomPipeBorder()) {
         position_.y = current_pipe_->GetBottomPipeBorder() - kApothem;
         velocity_ = glm::vec2(0, 0);
@@ -141,6 +141,10 @@ glm::vec2 Sprite::RelativeLerpUp() {
 void Sprite::SetPosition(glm::vec2 position) {
   position_ = position;
 }
+glm::vec2 &Sprite::GetVelocity() { return velocity_; }
+glm::vec2 &Sprite::GetPosition() { return position_; }
+glm::vec2 Sprite::GetLerp() {
+  return isLerpActive ? lerp_ : glm::vec2(0,0); }
 
 } // namespace visualizer
 } // namespace naivebayes

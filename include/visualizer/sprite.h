@@ -95,6 +95,28 @@ public:
 
     void SetPosition(glm::vec2 position);
 
+    /**
+     * Gets the velocity_
+     * Used for testing
+     */
+
+    glm::vec2  & GetVelocity();
+
+    /**
+     * Gets the position_
+     * Used for testing
+     */
+
+    glm::vec2 & GetPosition();
+
+    /**
+     * Gets the lerp_
+     * Used for testing
+     */
+     glm::vec2 GetLerp();
+
+
+
 
 
 
