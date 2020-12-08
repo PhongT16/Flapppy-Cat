@@ -16,46 +16,18 @@ public:
    * @param position The initial position of the Sprite
    * @param velocity The initial velocity of the Sprite
    */
-  Sprite(glm::vec2 position, glm::vec2 velocity, int radius);
+  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem, double window_size);
 
   /**
    * Checks whether there is pipe or border collision
    * @param position The new position of the sprite
    */
-  void CollisionDetection();
-
-  /**
-   * Retrieves the current position of the sprite
-   * @return The current position (position_) of the sprite
-   */
-  glm::vec2 GetPosition();
-
-  /**
-   * Updates the velocity of the Sprite
-   * @param velocity The new velocity of the sprite
-   */
-  void UpdateVelocity(glm::vec2 velocity);
-
-  /**
-   * Retrieves the current velocity of the sprite
-   * @return The current velocity (velocity_) of the sprite
-   */
-  glm::vec2 GetVelocity();
+  bool CollisionDetection();
 
   /**
    * Draws the Sprite object
    */
   void Draw();
-
-  /**
-   * Moves the Sprite to the left
-   */
-  void MoveLeft();
-
-  /**
-   * Moves the Sprite to the right
-   */
-  void MoveRight();
 
   /**
    * Moves the Sprite up
@@ -89,7 +61,7 @@ public:
    /**
     * Set the current pipe
     */
-    void SetPipe(Pipe & pipe);
+    void SetPipe(const Pipe & pipe);
 
 
     /**
@@ -117,6 +89,12 @@ public:
 
 
 private:
+  // The starting position of the sprite
+  const glm::vec2 starting_position_;
+
+  // The starting velocity of the sprite
+  const glm::vec2 starting_velocity_;
+
   // The current position of the Sprite
   glm::vec2 position_;
 
@@ -124,18 +102,28 @@ private:
   glm::vec2 velocity_;
 
   // The Radius of the object
-  const int kRadius;
+  const int kApothem;
 
-  bool GameEnd = false;
+  // Whether the sprite has collided with the wall
+  bool has_collided_;
 
+  // The current pipe that the sprite is approaching
+  const Pipe * current_pipe_;
 
-  Pipe * current_pipe_;
-
+  // The next position of the sprite
   glm::vec2 next_position_;
 
+  // The lerp value
   glm::vec2 lerp_;
 
-  bool move_ = false;
+
+  bool isLerpActive = false;
+
+  ci::gl::TextureRef up_motion_texture_;
+  ci::gl::TextureRef down_motion_texture_;
+
+  const double kWindowSize;
+
 
 //
 // int score_ = 0;

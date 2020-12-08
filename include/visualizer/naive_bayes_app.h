@@ -26,36 +26,60 @@ class NaiveBayesApp : public ci::app::App {
   void mouseDown(ci::app::MouseEvent event) override;
   void mouseDrag(ci::app::MouseEvent event) override;
   void keyDown(ci::app::KeyEvent event) override;
-
-  void replay();
-  void clear();
-
-  // TODO: Delete this comment. Feel free to play around with these variables
-  // provided that you can see the entire UI on your screen.
-  const double kWindowSize = 650;
   ~NaiveBayesApp();
 
   /**
+   * Resets the member variables of this object except for high_score_
+   */
+  void replay();
+
+  /**
+   * Helper function that deletes the pipe_lists_ vector
+   */
+  void clear();
+
+  /**
    * Deletes pipes that have gone out of frame
+   * Helps free up heap memory and relieves with lag
    */
 
   void DeletePipe();
 
- private:
-  Sprite sprite_;
-  std::vector<Pipe *> pipe_list_;
-  int counter;
-  bool start_game_ = false;
-  int score = 0;
-  std::vector<bool> visited;
-  bool Game_End_ = false;
-  int highcore_ = 0;
+  // provided that you can see the entire UI on your screen.
+  const double kWindowSize = 650;
 
-  std::string				mText;
-  cinder::gl::TextureRef		mTextTexture;
-  glm::vec2				mSize;
-  ci::Font				mFont;
+ private:
+  // The sprite
+  Sprite sprite_;
+
+  // A vector of spawned pipes
+  std::vector<Pipe *> pipe_list_;
+
+  // A count of when a new pipe gets spawned
+  int pipe_spawn_timer;
+
+  // Keeps track of whether the game has start
+  bool start_game_ = false;
+
+  // The score per game
+  int score_ = 0;
+
+  // A vector keeping track of passed pipes
+  std::vector<bool> visited_;
+
+  // Whether the game has ended
+  bool Game_End_ = false;
+
+  // The high score since the game has been played
+  int high_score_ = 0;
+
+
+  cinder::gl::TextureRef mTextTexture;
+  ci::Font mFont;
+
+  // Texture containg the background picture
   ci::gl::TextureRef mTexture;
+
 
 };
 

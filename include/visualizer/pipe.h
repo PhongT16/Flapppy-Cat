@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include <string>
 
 namespace naivebayes {
 
@@ -11,7 +12,13 @@ namespace visualizer {
 class Pipe {
 public:
 
-  Pipe(double height);
+  /**
+   * Custom Constructor for Pipe
+   * @param height The initial height of the pipe
+   * @param speed The initial speed of the speed
+   */
+  Pipe(double height, int speed);
+
   /**
    * Draws the Pipe
    */
@@ -50,15 +57,38 @@ public:
 
   double GetBottomPipeBorder() const;
 
-  void SetSpeed(int value);
+
+  void MovePipe();
 
 private:
+
+  // The starting  x-coordinate of left side of the top and bottom pipe
   double left_side_ = 650.0;
-  double right_side_ = 750.0; // 905
-  int height_;
-  const int pipe_distance_ = 150;
+
+  // The starting y-coordinate of the right side of the top and bottom pipe
+  double right_side_ = 725.0; // 750
+
+  // The starting height of the top_height_
+  const int height_;
+
+  // The distance between the top and bottom pipe
+  const int pipe_distance_ = 220; // 210
+
+  // The speed that the pipe is moving at
   int speed = 1;
+
+  // The y-coordinate of the bottom side of the top pipe
+  double top_pipe_;
+
+  // The y-coordinate of the top side of the bottom pipe
+  double bottom_pipe_;
+
+  // The average y-coordinate between top_pipe_ and bottom_pipe_
+  double pipe_mid_point_;
+
+  double target_height_;
 };
+
 }
 }
 
