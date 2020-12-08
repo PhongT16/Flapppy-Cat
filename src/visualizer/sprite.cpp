@@ -118,7 +118,7 @@ bool Sprite::CheckPipeCollision() {
 void Sprite::SetPipe(const Pipe &pipe) { current_pipe_ = &pipe; }
 
 bool Sprite::HasPassedPipe(const Pipe &pipe) {
-  return pipe.GetPositionRightSide() <= position_.x - kApothem;
+  return pipe.GetPositionRightSide() < position_.x - kApothem;
 }
 
 void Sprite::ResetGame() {

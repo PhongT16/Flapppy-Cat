@@ -169,3 +169,27 @@ TEST_CASE("Internal Pipe Collision") {
   }
 }
 
+TEST_CASE("HasPassedPipe function") {
+  SECTION("Hasn't Entered Pipe - Not passed") {
+    game::visualizer::Sprite sprite(glm::vec2(340, 260), glm::vec2(0, 3), 25);
+    game::visualizer::Pipe pipe(300, 1);
+    pipe.SetPipePosition(300, 375);
+    REQUIRE(!sprite.HasPassedPipe(pipe));
+  }
+
+  SECTION("Entered Pipe - Not passed") {
+    game::visualizer::Sprite sprite(glm::vec2(340, 320), glm::vec2(0, 3), 25);
+    game::visualizer::Pipe pipe(300, 1);
+    pipe.SetPipePosition(300, 375);
+    REQUIRE(!sprite.HasPassedPipe(pipe));
+
+  }
+
+  SECTION("Passed Pipe - passed") {
+    game::visualizer::Sprite sprite(glm::vec2(401, 400), glm::vec2(0, 3), 25);
+    game::visualizer::Pipe pipe(300, 1);
+    pipe.SetPipePosition(300, 375);
+    REQUIRE(sprite.HasPassedPipe(pipe));
+  }
+}
+
