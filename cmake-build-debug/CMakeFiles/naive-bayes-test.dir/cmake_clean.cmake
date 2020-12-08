@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.o"
-  "CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o"
+  "CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o"
   "CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.o"
   "CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o"
   "CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o"

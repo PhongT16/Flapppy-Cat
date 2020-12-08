@@ -87,18 +87,18 @@ CMakeFiles/sketchpad-classifier.dir/src/core/rename_this_file.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sketchpad-classifier.dir/src/core/rename_this_file.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/core/rename_this_file.cc -o CMakeFiles/sketchpad-classifier.dir/src/core/rename_this_file.cc.s
 
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o: CMakeFiles/sketchpad-classifier.dir/flags.make
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o: ../src/visualizer/naive_bayes_app.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/naive_bayes_app.cc
+CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o: CMakeFiles/sketchpad-classifier.dir/flags.make
+CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o: ../src/visualizer/jetpack_cat.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/jetpack_cat.cc
 
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/naive_bayes_app.cc > CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.i
+CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/jetpack_cat.cc > CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.i
 
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/naive_bayes_app.cc -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.s
+CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/jetpack_cat.cc -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.s
 
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o: CMakeFiles/sketchpad-classifier.dir/flags.make
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o: ../src/visualizer/sketchpad.cc
@@ -156,7 +156,7 @@ CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.s: cma
 sketchpad__classifier_OBJECTS = \
 "CMakeFiles/sketchpad-classifier.dir/apps/cinder_app_main.cc.o" \
 "CMakeFiles/sketchpad-classifier.dir/src/core/rename_this_file.cc.o" \
-"CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o" \
+"CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o" \
 "CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o" \
 "CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o" \
 "CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o" \
@@ -167,7 +167,7 @@ sketchpad__classifier_EXTERNAL_OBJECTS =
 
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/apps/cinder_app_main.cc.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/core/rename_this_file.cc.o
-Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o
+Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o

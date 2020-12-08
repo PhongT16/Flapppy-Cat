@@ -87,18 +87,18 @@ CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/core/rename_this_file.cc -o CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.s
 
-CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o: CMakeFiles/naive-bayes-test.dir/flags.make
-CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o: ../src/visualizer/naive_bayes_app.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/naive_bayes_app.cc
+CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o: CMakeFiles/naive-bayes-test.dir/flags.make
+CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o: ../src/visualizer/jetpack_cat.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/jetpack_cat.cc
 
-CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/naive_bayes_app.cc > CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.i
+CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/jetpack_cat.cc > CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.i
 
-CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/naive_bayes_app.cc -o CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.s
+CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/jetpack_cat.cc -o CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.s
 
 CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o: CMakeFiles/naive-bayes-test.dir/flags.make
 CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o: ../src/visualizer/sketchpad.cc
@@ -169,7 +169,7 @@ CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.s: cmake_force
 naive__bayes__test_OBJECTS = \
 "CMakeFiles/naive-bayes-test.dir/tests/test_main.cc.o" \
 "CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.o" \
-"CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o" \
+"CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o" \
 "CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o" \
 "CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o" \
 "CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.o" \
@@ -181,7 +181,7 @@ naive__bayes__test_EXTERNAL_OBJECTS =
 
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/tests/test_main.cc.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.o
-Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o
+Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/sketchpad.cc.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o
 Debug/naive-bayes-test/naive-bayes-test.app/Contents/MacOS/naive-bayes-test: CMakeFiles/naive-bayes-test.dir/src/visualizer/pipe.cpp.o

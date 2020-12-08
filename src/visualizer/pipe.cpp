@@ -6,7 +6,7 @@
 
 #include "iostream"
 
-namespace naivebayes {
+namespace game {
 
 namespace visualizer {
 
@@ -62,6 +62,12 @@ void Pipe::MovePipe() {
   } else if (top_pipe_ <= height_ && target_height_ == height_) {
     target_height_ = pipe_mid_point_;
   }
+}
+int Pipe::GetSpeed() const { return speed; }
+
+void Pipe::SetPipePosition(double left_side, double right_side) {
+  left_side_ = left_side;
+  right_side_ = right_side;
 }
 
 }

@@ -5,12 +5,14 @@
 #include "cinder/gl/gl.h"
 #include "visualizer/pipe.h"
 
-namespace naivebayes {
+namespace game {
 
 namespace visualizer {
 
 class Sprite {
 public:
+
+  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem);
   /**
    * Custom Constructor for Sprite
    * @param position The initial position of the Sprite
@@ -84,6 +86,14 @@ public:
      */
 
     glm::vec2 RelativeLerpUp();
+
+    /**
+     * Sets the position of the sprite.
+     * Used for testing
+     * @param position The desired position
+     */
+
+    void SetPosition(glm::vec2 position);
 
 
 

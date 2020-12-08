@@ -5,9 +5,12 @@
 #include <cinder/app/AppBase.h>
 #include <iostream>
 
-namespace naivebayes {
+namespace game {
 
 namespace visualizer {
+
+Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem) : starting_position_(position), starting_velocity_(velocity), position_(position), velocity_(velocity),
+                                                                                      kApothem(apothem), current_pipe_(0), kWindowSize(650) {}
 
 Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem,
                double window_size)
@@ -80,7 +83,7 @@ bool Sprite::CheckPipeCollision() {
   if (current_pipe_ != NULL) {
     // Checks for side collision with pipe
     if (position_.x < current_pipe_->GetPositionLeftSide() &&
-        position_.x + kApothem >= current_pipe_->GetPositionLeftSide() &&
+        position_.x + kApothem + current_pipe_->GetSpeed() >= current_pipe_->GetPositionLeftSide() &&
         position_.y < current_pipe_->GetTopPipeBorder()) {
       position_.x = current_pipe_->GetPositionLeftSide() - kApothem;
       velocity_ = glm::vec2(0, 0);
@@ -88,7 +91,7 @@ bool Sprite::CheckPipeCollision() {
 
       // std::cout << "COLLISION" << std::endl;
     } else if (position_.x < current_pipe_->GetPositionLeftSide() &&
-               position_.x + kApothem >= current_pipe_->GetPositionLeftSide() &&
+               position_.x + kApothem + current_pipe_->GetSpeed() >= current_pipe_->GetPositionLeftSide() &&
                position_.y >= current_pipe_->GetBottomPipeBorder()) {
       position_.x = current_pipe_->GetPositionLeftSide() - kApothem;
       velocity_ = glm::vec2(0, 0);
@@ -133,6 +136,10 @@ glm::vec2 Sprite::RelativeLerpUp() {
 
   lerp_ = glm::vec2(x, y);
   return glm::vec2(x, y);
+}
+
+void Sprite::SetPosition(glm::vec2 position) {
+  position_ = position;
 }
 
 } // namespace visualizer

@@ -1,10 +1,10 @@
-#include <visualizer/naive_bayes_app.h>
+#include <visualizer/jetpack_cat.h>
 
-using naivebayes::visualizer::NaiveBayesApp;
+using game::visualizer::JetpackCat;
 
-void prepareSettings(NaiveBayesApp::Settings* settings) {
+void prepareSettings(JetpackCat::Settings* settings) {
   settings->setResizable(false);
 }
 
 // This line is a macro that expands into an "int main()" function.
-CINDER_APP(NaiveBayesApp, ci::app::RendererGl, prepareSettings);
+CINDER_APP(JetpackCat, ci::app::RendererGl, prepareSettings);

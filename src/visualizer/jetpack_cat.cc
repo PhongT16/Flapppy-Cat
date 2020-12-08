@@ -1,29 +1,29 @@
-#include <visualizer/naive_bayes_app.h>
-#include <iostream>
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
+#include <iostream>
 #include <string>
+#include <visualizer/jetpack_cat.h>
 
-namespace naivebayes {
+namespace game {
 
 namespace visualizer {
 using namespace ci;
 using namespace ci::app;
 
-NaiveBayesApp::NaiveBayesApp()
+JetpackCat::JetpackCat()
     : sprite_(glm::vec2(kWindowSize / 2 + 0.5, 400.5), glm::vec2(0,3), 25, kWindowSize){
   ci::app::setWindowSize((int) kWindowSize, (int) kWindowSize);
   pipe_spawn_timer = 0;
 
 }
 
-void NaiveBayesApp::setup() {
+void JetpackCat::setup() {
   mFont = Font( "Times New Roman", 30 );
   mTexture = gl::Texture::create( loadImage( "/Users/phongtran/Desktop/siebel.png"));
 
 }
 
-void NaiveBayesApp::draw() {
+void JetpackCat::draw() {
 
   ci::gl::clear();
 
@@ -48,7 +48,7 @@ void NaiveBayesApp::draw() {
       pipe_spawn_timer = 0;
     }
 
-    //
+    // Draws the pipes
     for (auto it = pipe_list_.begin(); it != pipe_list_.end(); ++it) {
       if (*it != nullptr) {
         (*it)->Draw(false);
@@ -75,11 +75,9 @@ void NaiveBayesApp::draw() {
     TextBox tbox = TextBox().alignment( TextBox::CENTER ).font( mFont ).size( ivec2( 50 , 50) ).text(std::to_string(score_));
     tbox.setColor( Color( 0.0f, 0.0f, 0.0f ) );
     mTextTexture = gl::Texture2d::create( tbox.render() );
+
     if( mTextTexture )
-      gl::draw( mTextTexture, glm::vec2(kWindowSize / 2 - 25, 100) );
-
-
-    //sprite_.Draw();
+      gl::draw( mTextTexture, glm::vec2(kWindowSize / 2 - 25, 100));
 
   } else if (sprite_.CollisionDetection()) {
     Game_End_ = true;
@@ -118,16 +116,16 @@ void NaiveBayesApp::draw() {
 
 }
 
-void NaiveBayesApp::mouseDown(ci::app::MouseEvent event) {
+void JetpackCat::mouseDown(ci::app::MouseEvent event) {
   //sketchpad_.HandleBrush(event.getPos());
 
 }
 
-void NaiveBayesApp::mouseDrag(ci::app::MouseEvent event) {
+void JetpackCat::mouseDrag(ci::app::MouseEvent event) {
   //sketchpad_.HandleBrush(event.getPos());
 }
 
-void NaiveBayesApp::keyDown(ci::app::KeyEvent event) {
+void JetpackCat::keyDown(ci::app::KeyEvent event) {
   if (!start_game_) {
     switch (event.getCode()) {
     /*case ci::app::KeyEvent::KEY_SPACE:
@@ -152,18 +150,18 @@ void NaiveBayesApp::keyDown(ci::app::KeyEvent event) {
   }
 }
 
-NaiveBayesApp::~NaiveBayesApp() {
+JetpackCat::~JetpackCat() {
   clear();
 }
 
-void NaiveBayesApp::replay() {
+void JetpackCat::replay() {
   clear();
   sprite_.ResetGame();
   start_game_ = false;
   pipe_spawn_timer = 0;
 
 }
-void NaiveBayesApp::clear() {
+void JetpackCat::clear() {
   for (size_t i = 0; i < pipe_list_.size(); i++) {
     if (pipe_list_.at(i) == nullptr) {
       continue;
@@ -177,7 +175,7 @@ void NaiveBayesApp::clear() {
   visited_.clear();
   //score_ = 0;
 }
-void NaiveBayesApp::DeletePipe() {
+void JetpackCat::DeletePipe() {
 
   for (unsigned i = 0; i < pipe_list_.size(); i++) {
     if (pipe_list_.at(i) !=
@@ -188,7 +186,7 @@ void NaiveBayesApp::DeletePipe() {
     }
   }
 }
-
+Sprite & JetpackCat::GetSprite() { return sprite_; }
 
 }  // namespace visualizer
 

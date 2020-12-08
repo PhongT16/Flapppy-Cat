@@ -236,35 +236,35 @@ src/core/rename_this_file.cc.s:
 	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/core/rename_this_file.cc.s
 .PHONY : src/core/rename_this_file.cc.s
 
-src/visualizer/naive_bayes_app.o: src/visualizer/naive_bayes_app.cc.o
+src/visualizer/jetpack_cat.o: src/visualizer/jetpack_cat.cc.o
 
-.PHONY : src/visualizer/naive_bayes_app.o
+.PHONY : src/visualizer/jetpack_cat.o
 
 # target to build an object file
-src/visualizer/naive_bayes_app.cc.o:
-	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.o
-	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.o
-.PHONY : src/visualizer/naive_bayes_app.cc.o
+src/visualizer/jetpack_cat.cc.o:
+	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o
+	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.o
+.PHONY : src/visualizer/jetpack_cat.cc.o
 
-src/visualizer/naive_bayes_app.i: src/visualizer/naive_bayes_app.cc.i
+src/visualizer/jetpack_cat.i: src/visualizer/jetpack_cat.cc.i
 
-.PHONY : src/visualizer/naive_bayes_app.i
+.PHONY : src/visualizer/jetpack_cat.i
 
 # target to preprocess a source file
-src/visualizer/naive_bayes_app.cc.i:
-	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.i
-	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.i
-.PHONY : src/visualizer/naive_bayes_app.cc.i
+src/visualizer/jetpack_cat.cc.i:
+	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.i
+	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.i
+.PHONY : src/visualizer/jetpack_cat.cc.i
 
-src/visualizer/naive_bayes_app.s: src/visualizer/naive_bayes_app.cc.s
+src/visualizer/jetpack_cat.s: src/visualizer/jetpack_cat.cc.s
 
-.PHONY : src/visualizer/naive_bayes_app.s
+.PHONY : src/visualizer/jetpack_cat.s
 
 # target to generate assembly for a file
-src/visualizer/naive_bayes_app.cc.s:
-	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/naive_bayes_app.cc.s
-	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/naive_bayes_app.cc.s
-.PHONY : src/visualizer/naive_bayes_app.cc.s
+src/visualizer/jetpack_cat.cc.s:
+	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.s
+	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/jetpack_cat.cc.s
+.PHONY : src/visualizer/jetpack_cat.cc.s
 
 src/visualizer/pipe.o: src/visualizer/pipe.cpp.o
 
@@ -460,9 +460,9 @@ help:
 	@echo "... src/core/rename_this_file.o"
 	@echo "... src/core/rename_this_file.i"
 	@echo "... src/core/rename_this_file.s"
-	@echo "... src/visualizer/naive_bayes_app.o"
-	@echo "... src/visualizer/naive_bayes_app.i"
-	@echo "... src/visualizer/naive_bayes_app.s"
+	@echo "... src/visualizer/jetpack_cat.o"
+	@echo "... src/visualizer/jetpack_cat.i"
+	@echo "... src/visualizer/jetpack_cat.s"
 	@echo "... src/visualizer/pipe.o"
 	@echo "... src/visualizer/pipe.i"
 	@echo "... src/visualizer/pipe.s"

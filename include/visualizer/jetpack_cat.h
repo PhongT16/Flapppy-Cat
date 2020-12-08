@@ -9,7 +9,7 @@
 //#import <cinder/gl/Texture.h>
 #include <cinder/gl/gl.h>
 #include <vector>
-namespace naivebayes {
+namespace game {
 
 namespace visualizer {
 
@@ -17,16 +17,16 @@ namespace visualizer {
  * Allows a user to draw a digit on a sketchpad and uses Naive Bayes to
  * classify it.
  */
-class NaiveBayesApp : public ci::app::App {
+class JetpackCat : public ci::app::App {
  public:
-  NaiveBayesApp();
+  JetpackCat();
 
   void draw() override;
   void setup() override;
   void mouseDown(ci::app::MouseEvent event) override;
   void mouseDrag(ci::app::MouseEvent event) override;
   void keyDown(ci::app::KeyEvent event) override;
-  ~NaiveBayesApp();
+  ~JetpackCat();
 
   /**
    * Resets the member variables of this object except for high_score_
@@ -47,6 +47,8 @@ class NaiveBayesApp : public ci::app::App {
 
   // provided that you can see the entire UI on your screen.
   const double kWindowSize = 650;
+
+  Sprite & GetSprite();
 
  private:
   // The sprite
@@ -79,6 +81,7 @@ class NaiveBayesApp : public ci::app::App {
 
   // Texture containg the background picture
   ci::gl::TextureRef mTexture;
+
 
 
 };

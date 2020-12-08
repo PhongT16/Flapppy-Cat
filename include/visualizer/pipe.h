@@ -5,7 +5,7 @@
 #pragma once
 #include <string>
 
-namespace naivebayes {
+namespace game {
 
 namespace visualizer {
 
@@ -57,15 +57,32 @@ public:
 
   double GetBottomPipeBorder() const;
 
+  /**
+   *
+   */
+  int GetSpeed() const;
 
+  /**
+   * Move the top pipe down and bottom pipe up until they meet at the midpoint height
+   */
   void MovePipe();
+
+  /**
+   * Sets the pipe's position
+   * Used for testing
+   * @param left_side The desired x-coordinate for the left side of the pipe
+   * @param right_side The desired x-coordinate for the right side of the pipe
+   */
+
+  void SetPipePosition(double left_side, double right_side);
+
 
 private:
 
-  // The starting  x-coordinate of left side of the top and bottom pipe
+  // The starting x-coordinate of left side of the top and bottom pipe
   double left_side_ = 650.0;
 
-  // The starting y-coordinate of the right side of the top and bottom pipe
+  // The starting x-coordinate of the right side of the top and bottom pipe
   double right_side_ = 725.0; // 750
 
   // The starting height of the top_height_

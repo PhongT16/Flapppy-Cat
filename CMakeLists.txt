@@ -52,7 +52,7 @@ include("${CINDER_PATH}/proj/cmake/modules/cinderMakeApp.cmake")
 list(APPEND CORE_SOURCE_FILES src/core/rename_this_file.cc)
 
 list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
-                            src/visualizer/naive_bayes_app.cc
+        src/visualizer/jetpack_cat.cc
                             src/visualizer/sketchpad.cc
         src/visualizer/sprite.cpp
         src/visualizer/pipe.cpp
