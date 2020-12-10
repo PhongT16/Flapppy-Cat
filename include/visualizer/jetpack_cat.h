@@ -23,8 +23,6 @@ class JetpackCat : public ci::app::App {
 
   void draw() override;
   void setup() override;
-  void mouseDown(ci::app::MouseEvent event) override;
-  void mouseDrag(ci::app::MouseEvent event) override;
   void keyDown(ci::app::KeyEvent event) override;
   ~JetpackCat();
 
@@ -48,10 +46,11 @@ class JetpackCat : public ci::app::App {
   // provided that you can see the entire UI on your screen.
   const double kWindowSize = 650;
 
-  Sprite & GetSprite();
+
 
  private:
-  // The sprite
+
+  // The sprite for the game
   Sprite sprite_;
 
   // A vector of spawned pipes
@@ -75,8 +74,7 @@ class JetpackCat : public ci::app::App {
   // The high score since the game has been played
   int high_score_ = 0;
 
-
-  cinder::gl::TextureRef mTextTexture;
+  // A default mFont
   ci::Font mFont;
 
   // Texture containg the background picture
@@ -88,4 +86,4 @@ class JetpackCat : public ci::app::App {
 
 }  // namespace visualizer
 
-}  // namespace naivebayes
+}  // namespace game

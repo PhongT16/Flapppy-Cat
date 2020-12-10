@@ -12,13 +12,13 @@ namespace visualizer {
 class Sprite {
 public:
 
-  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem);
+  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem);
   /**
    * Custom Constructor for Sprite
    * @param position The initial position of the Sprite
    * @param velocity The initial velocity of the Sprite
    */
-  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem, double window_size);
+  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem, double window_size);
 
   /**
    * Checks whether there is pipe or border collision
@@ -88,14 +88,6 @@ public:
     glm::vec2 RelativeLerpUp();
 
     /**
-     * Sets the position of the sprite.
-     * Used for testing
-     * @param position The desired position
-     */
-
-    void SetPosition(glm::vec2 position);
-
-    /**
      * Gets the velocity_
      * Used for testing
      */
@@ -115,11 +107,6 @@ public:
      */
      glm::vec2 GetLerp();
 
-
-
-
-
-
 private:
   // The starting position of the sprite
   const glm::vec2 starting_position_;
@@ -134,7 +121,7 @@ private:
   glm::vec2 velocity_;
 
   // The Radius of the object
-  const int kApothem;
+  const size_t kApothem;
 
   // Whether the sprite has collided with the wall
   bool has_collided_;
@@ -148,21 +135,18 @@ private:
   // The lerp value
   glm::vec2 lerp_;
 
+  // Whether Relative Lerp has been called
+  bool isLerpActive;
 
-  bool isLerpActive = false;
-
+  // The texture for the up motion of the top pipe
   ci::gl::TextureRef up_motion_texture_;
+
+  // The texture for the down motion of the bottom pipe
   ci::gl::TextureRef down_motion_texture_;
 
+  // The size of the window
   const double kWindowSize;
-
-
-//
-// int score_ = 0;
-
 };
-
-
 }
 }
 

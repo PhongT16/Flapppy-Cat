@@ -4,13 +4,12 @@
 #include "visualizer/pipe.h"
 #include <cinder/gl/gl.h>
 
-#include "iostream"
 
 namespace game {
 
 namespace visualizer {
 
-Pipe::Pipe(double height, int speed) : height_(height), speed(speed) {
+Pipe::Pipe(size_t height, size_t speed) :left_side_(650.0), right_side_(725.0), height_(height), pipe_distance_(225), speed_(speed) {
   top_pipe_ = height_;
   bottom_pipe_ = height_ + pipe_distance_;
   pipe_mid_point_ = (height_ + height_ + pipe_distance_) / 2;
@@ -19,7 +18,7 @@ Pipe::Pipe(double height, int speed) : height_(height), speed(speed) {
 
 void Pipe::Draw(bool game) {
   ci::gl::color(ci::Color::white());
-  ci::gl::TextureRef  mTexture = ci::gl::Texture::create( ci::loadImage( "/Users/phongtran/Desktop/pic2.png" ) ); // /Users/phongtran/Desktop/background.jpeg3
+  ci::gl::TextureRef  mTexture = ci::gl::Texture::create( ci::loadImage( "data/pipe.png"));
   if (game) {
     ci::gl::draw( mTexture, ci::Rectf(left_side_, 0, right_side_, top_pipe_) );
     ci::gl::draw( mTexture, ci::Rectf(left_side_, bottom_pipe_, right_side_, 650) );
@@ -32,8 +31,8 @@ void Pipe::Draw(bool game) {
 }
 
 void Pipe::UpdateLocation() {
-  left_side_ -= speed;
-  right_side_ -= speed;
+  left_side_ -= speed_;
+  right_side_ -= speed_;
   MovePipe();
 
 }
@@ -47,14 +46,15 @@ double Pipe::GetTopPipeBorder() const { return top_pipe_; }
 double Pipe::GetBottomPipeBorder() const { return bottom_pipe_; }
 
 void Pipe::MovePipe() {
-  int value = 2;
+  // The speed at which the moves up and down
+  size_t vertical_speed = 2;
 
   if (target_height_ == pipe_mid_point_) {
-    top_pipe_ += value;
-    bottom_pipe_ -= value;
+    top_pipe_ += vertical_speed;
+    bottom_pipe_ -= vertical_speed;
   } else if (target_height_ == height_) {
-    top_pipe_ -= value;
-    bottom_pipe_ += value;
+    top_pipe_ -= vertical_speed;
+    bottom_pipe_ += vertical_speed;
   }
 
   if (top_pipe_ >= pipe_mid_point_ && target_height_ == pipe_mid_point_) {
@@ -63,7 +63,7 @@ void Pipe::MovePipe() {
     target_height_ = pipe_mid_point_;
   }
 }
-int Pipe::GetSpeed() const { return speed; }
+int Pipe::GetSpeed() const { return speed_; }
 
 void Pipe::SetPipePosition(double left_side, double right_side) {
   left_side_ = left_side;

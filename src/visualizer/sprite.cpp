@@ -9,19 +9,17 @@ namespace game {
 
 namespace visualizer {
 
-Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem) : starting_position_(position), starting_velocity_(velocity), position_(position), velocity_(velocity),
-                                                                                      kApothem(apothem), current_pipe_(0), kWindowSize(650) {}
+Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem) : starting_position_(position), starting_velocity_(velocity), position_(position), velocity_(velocity),
+                                                                                      kApothem(apothem), current_pipe_(0), isLerpActive(false), kWindowSize(650) {}
 
-Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, int apothem,
+Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem,
                double window_size)
     : starting_position_(position), starting_velocity_(velocity), position_(position), velocity_(velocity),
-      kApothem(apothem), current_pipe_(0), kWindowSize(window_size) {
+      kApothem(apothem), current_pipe_(0), isLerpActive(false), kWindowSize(window_size) {
   up_motion_texture_ = ci::gl::Texture::create(
-      ci::loadImage("/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/"
-                    "final-project-PhongT16/data/sprite.png"));
+      ci::loadImage("data/sprite.png"));
   down_motion_texture_ = ci::gl::Texture::create(
-      ci::loadImage("/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/"
-                    "final-project-PhongT16/data/sprite2.png"));
+      ci::loadImage("data/sprite2.png"));
   has_collided_ = false;
 }
 
@@ -138,13 +136,10 @@ glm::vec2 Sprite::RelativeLerpUp() {
   return glm::vec2(x, y);
 }
 
-void Sprite::SetPosition(glm::vec2 position) {
-  position_ = position;
-}
 glm::vec2 &Sprite::GetVelocity() { return velocity_; }
 glm::vec2 &Sprite::GetPosition() { return position_; }
 glm::vec2 Sprite::GetLerp() {
   return isLerpActive ? lerp_ : glm::vec2(0,0); }
 
 } // namespace visualizer
-} // namespace naivebayes
+} // namespace game

@@ -17,7 +17,7 @@ public:
    * @param height The initial height of the pipe
    * @param speed The initial speed of the speed
    */
-  Pipe(double height, int speed);
+  Pipe(size_t height, size_t speed);
 
   /**
    * Draws the Pipe
@@ -58,7 +58,8 @@ public:
   double GetBottomPipeBorder() const;
 
   /**
-   *
+   * Retrieves the current speed of the pipe
+   * @return the speed_
    */
   int GetSpeed() const;
 
@@ -80,19 +81,19 @@ public:
 private:
 
   // The starting x-coordinate of left side of the top and bottom pipe
-  double left_side_ = 650.0;
+  double left_side_;
 
   // The starting x-coordinate of the right side of the top and bottom pipe
-  double right_side_ = 725.0; // 750
+  double right_side_;
 
   // The starting height of the top_height_
-  const int height_;
+  const size_t height_;
 
   // The distance between the top and bottom pipe
-  const int pipe_distance_ = 220; // 210
+  const size_t pipe_distance_;
 
   // The speed that the pipe is moving at
-  int speed = 1;
+  size_t speed_;
 
   // The y-coordinate of the bottom side of the top pipe
   double top_pipe_;
@@ -103,6 +104,8 @@ private:
   // The average y-coordinate between top_pipe_ and bottom_pipe_
   double pipe_mid_point_;
 
+  // This height switches between pipe_mid_point_ and height_.
+  // It lets the pipe knows when to move up and down
   double target_height_;
 };
 
