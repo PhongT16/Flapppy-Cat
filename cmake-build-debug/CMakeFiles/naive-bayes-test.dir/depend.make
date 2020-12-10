@@ -3450,9 +3450,6 @@ CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o: /Users/phongtran/Do
 CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o: /Users/phongtran/Downloads/cinder_0.9.2_mac/include/glm/vector_relational.hpp
 CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.o: ../src/visualizer/sprite.cpp
 
-CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o: ../include/visualizer/vertical_game_mode.h
-CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o: ../src/visualizer/vertical_game_mode.cpp
-
 CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o: ../include/core/rename_this_file.h
 CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o: ../include/visualizer/jetpack_cat.h
 CMakeFiles/naive-bayes-test.dir/tests/rename_this_test_file.cc.o: ../include/visualizer/pipe.h

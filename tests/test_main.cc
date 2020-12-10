@@ -193,12 +193,12 @@ TEST_CASE("Internal Pipe Collision") {
   }
 
   SECTION("Aligned Collision") {
-    game::visualizer::Sprite sprite(glm::vec2(340, 492), glm::vec2(0, 3), 25);
+    game::visualizer::Sprite sprite(glm::vec2(340, 499), glm::vec2(0, 3), 25);
     game::visualizer::Pipe pipe(300, 1);
     sprite.SetPipe(pipe);
     pipe.SetPipePosition(300, 375);
     REQUIRE(sprite.CheckPipeCollision());
-    REQUIRE(sprite.GetPosition() == glm::vec2(340, 495));
+    REQUIRE(sprite.GetPosition() == glm::vec2(340, 500));
     REQUIRE(sprite.GetVelocity() == glm::vec2(0, 0));
   }
 
@@ -208,7 +208,7 @@ TEST_CASE("Internal Pipe Collision") {
     sprite.SetPipe(pipe);
     pipe.SetPipePosition(300, 375);
     REQUIRE(sprite.CheckPipeCollision());
-    REQUIRE(sprite.GetPosition() == glm::vec2(340, 495));
+    REQUIRE(sprite.GetPosition() == glm::vec2(340, 500));
     REQUIRE(sprite.GetVelocity() == glm::vec2(0, 0));
   }
 }

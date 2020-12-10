@@ -1,16 +1,13 @@
-Fill this in before the final project deadline. Someone who has _no familiarity_ with your project should be able to read this and understand:
-* what your project does
-* how to set it up and run it
-
-This game is called SuperCat. It is my take on the now infamous game, Flappy Bird. With this take on Flappy Bird, I made the setting 
-of the game to be at UIUC and the sprite (JetPackCat) is a student. I adopted a UIUC theme for this game. 
+This game is called JetPackCat. It is my take on the now infamous game, Flappy Bird. With this take on Flappy Bird, I made the setting 
+of the game to be at UIUC and the sprite (JetPackCat) is a student. Unlike before, the pipes will come crashing down, so be beware.
+ 
 
 Run Game: 
 - Install the latest version of cinder
-- Build Cinder using the latest version of Clion.  
+- Build Cinder using the latest version of Clion using CMake
 - Create a "my-projects" folder
-- Drop this application in the "my-projects folder"
-- Make sure the working directory is set to this application. 
+- Drop/copy this application in the "my-projects folder"
+- Make sure the working directory is set to this application 
 - Compile and Run the game! 
 
 To play:

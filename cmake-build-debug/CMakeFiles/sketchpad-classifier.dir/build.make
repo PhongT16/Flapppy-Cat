@@ -139,19 +139,6 @@ CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/pipe.cpp -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.s
 
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o: CMakeFiles/sketchpad-classifier.dir/flags.make
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o: ../src/visualizer/vertical_game_mode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o -c /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp
-
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp > CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.i
-
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp -o CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.s
-
 # Object files for target sketchpad-classifier
 sketchpad__classifier_OBJECTS = \
 "CMakeFiles/sketchpad-classifier.dir/apps/cinder_app_main.cc.o" \
@@ -159,8 +146,7 @@ sketchpad__classifier_OBJECTS = \
 "CMakeFiles/sketchpad-classifier.dir/src/visualizer/jetpack_cat.cc.o" \
 "CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o" \
 "CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o" \
-"CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o" \
-"CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o"
+"CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o"
 
 # External object files for target sketchpad-classifier
 sketchpad__classifier_EXTERNAL_OBJECTS =
@@ -171,13 +157,12 @@ Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-cla
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o
-Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/build.make
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: /Users/phongtran/Downloads/cinder_0.9.2_mac/lib/macosx/Debug/libcinder.a
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: /Users/phongtran/Downloads/cinder_0.9.2_mac/lib/macosx/libboost_system.a
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: /Users/phongtran/Downloads/cinder_0.9.2_mac/lib/macosx/libboost_filesystem.a
 Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier: CMakeFiles/sketchpad-classifier.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sketchpad-classifier.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

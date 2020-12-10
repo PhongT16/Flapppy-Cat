@@ -9,35 +9,39 @@ namespace game {
 
 namespace visualizer {
 
-Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem) : starting_position_(position), starting_velocity_(velocity), position_(position), velocity_(velocity),
-                                                                                      kApothem(apothem), current_pipe_(0), isLerpActive(false), kWindowSize(650) {}
+Sprite::Sprite(const glm::vec2 &position, const glm::vec2 &velocity,
+               size_t apothem)
+    : starting_position_(position), starting_velocity_(velocity),
+      position_(position), velocity_(velocity), kApothem(apothem),
+      current_pipe_(0), is_lerp_active_(false), kWindowSize(650) {}
 
-Sprite::Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem,
-               double window_size)
-    : starting_position_(position), starting_velocity_(velocity), position_(position), velocity_(velocity),
-      kApothem(apothem), current_pipe_(0), isLerpActive(false), kWindowSize(window_size) {
-  up_motion_texture_ = ci::gl::Texture::create(
-      ci::loadImage("data/sprite.png"));
-  down_motion_texture_ = ci::gl::Texture::create(
-      ci::loadImage("data/sprite2.png"));
+Sprite::Sprite(const glm::vec2 &position, const glm::vec2 &velocity,
+               size_t apothem, double window_size)
+    : starting_position_(position), starting_velocity_(velocity),
+      position_(position), velocity_(velocity), kApothem(apothem),
+      current_pipe_(0), is_lerp_active_(false), kWindowSize(window_size) {
+  up_motion_texture_ =
+      ci::gl::Texture::create(ci::loadImage("data/sprite.png"));
+  down_motion_texture_ =
+      ci::gl::Texture::create(ci::loadImage("data/sprite2.png"));
   has_collided_ = false;
 }
 
 void Sprite::Draw() {
-  //has_collided_ = CollisionDetection();
+  // has_collided_ = CollisionDetection();
   ci::gl::color(ci::Color::white());
 
-  if (position_.y > next_position_.y && isLerpActive) {
+  if (position_.y > next_position_.y && is_lerp_active_) {
     position_.y -= lerp_.y;
     ci::gl::draw(up_motion_texture_,
-                 ci::Rectf(position_.x - kApothem, position_.y - kApothem, position_.x + kApothem,
-                           position_.y + kApothem));
+                 ci::Rectf(position_.x - kApothem, position_.y - kApothem,
+                           position_.x + kApothem, position_.y + kApothem));
   } else {
-    isLerpActive = false;
+    is_lerp_active_ = false;
     Drop();
     ci::gl::draw(down_motion_texture_,
-                 ci::Rectf(position_.x - kApothem, position_.y - kApothem, position_.x + kApothem,
-                           position_.y + kApothem));
+                 ci::Rectf(position_.x - kApothem, position_.y - kApothem,
+                           position_.x + kApothem, position_.y + kApothem));
   }
 }
 
@@ -45,21 +49,20 @@ bool Sprite::CollisionDetection() {
   return CheckPipeCollision() || CheckBorderCollision();
 }
 
-void Sprite::Drop() {
-  position_.y += velocity_.y;
-}
+void Sprite::Drop() { position_.y += velocity_.y; }
 
 void Sprite::MoveUp() {
   RelativeLerpUp();
-  isLerpActive = true;
+  is_lerp_active_ = true;
 }
+
 bool Sprite::CheckBorderCollision() {
 
   double top_border_y_ = 0;
   double bottom_border_y_ = kWindowSize;
   bool is_collision = false;
 
-  if (isLerpActive && position_.y - kApothem - lerp_.y <= top_border_y_) {
+  if (is_lerp_active_ && position_.y - kApothem - lerp_.y <= top_border_y_) {
     position_.y = top_border_y_ + kApothem;
     position_.x += velocity_.x;
     velocity_ = glm::vec2(0, 0);
@@ -73,23 +76,21 @@ bool Sprite::CheckBorderCollision() {
   return is_collision;
 }
 
-bool Sprite::GetGame() { return has_collided_; }
-
 bool Sprite::CheckPipeCollision() {
   bool has_collided = false;
 
   if (current_pipe_ != NULL) {
     // Checks for side collision with pipe
     if (position_.x < current_pipe_->GetPositionLeftSide() &&
-        position_.x + kApothem + current_pipe_->GetSpeed() >= current_pipe_->GetPositionLeftSide() &&
+        position_.x + kApothem + current_pipe_->GetSpeed() >=
+            current_pipe_->GetPositionLeftSide() &&
         position_.y < current_pipe_->GetTopPipeBorder()) {
       position_.x = current_pipe_->GetPositionLeftSide() - kApothem;
       velocity_ = glm::vec2(0, 0);
       has_collided = true;
-
-      // std::cout << "COLLISION" << std::endl;
     } else if (position_.x < current_pipe_->GetPositionLeftSide() &&
-               position_.x + kApothem + current_pipe_->GetSpeed() >= current_pipe_->GetPositionLeftSide() &&
+               position_.x + kApothem + current_pipe_->GetSpeed() >=
+                   current_pipe_->GetPositionLeftSide() &&
                position_.y >= current_pipe_->GetBottomPipeBorder()) {
       position_.x = current_pipe_->GetPositionLeftSide() - kApothem;
       velocity_ = glm::vec2(0, 0);
@@ -99,7 +100,8 @@ bool Sprite::CheckPipeCollision() {
     // Checks for internal collision with pipe
     if (position_.x >= current_pipe_->GetPositionLeftSide() &&
         position_.x - kApothem <= current_pipe_->GetPositionRightSide()) {
-      if (isLerpActive && position_.y - kApothem - lerp_.y <= current_pipe_->GetTopPipeBorder()) {
+      if (is_lerp_active_ && position_.y - kApothem - lerp_.y <=
+                                 current_pipe_->GetTopPipeBorder()) {
         position_.y = current_pipe_->GetTopPipeBorder() + kApothem;
         velocity_ = glm::vec2(0, 0);
         has_collided = true;
@@ -139,7 +141,8 @@ glm::vec2 Sprite::RelativeLerpUp() {
 glm::vec2 &Sprite::GetVelocity() { return velocity_; }
 glm::vec2 &Sprite::GetPosition() { return position_; }
 glm::vec2 Sprite::GetLerp() {
-  return isLerpActive ? lerp_ : glm::vec2(0,0); }
+  return is_lerp_active_ ? lerp_ : glm::vec2(0, 0);
+}
 
 } // namespace visualizer
 } // namespace game

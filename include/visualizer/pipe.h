@@ -11,7 +11,6 @@ namespace visualizer {
 
 class Pipe {
 public:
-
   /**
    * Custom Constructor for Pipe
    * @param height The initial height of the pipe
@@ -22,7 +21,7 @@ public:
   /**
    * Draws the Pipe
    */
-  void Draw(bool game_);
+  void Draw(bool game);
 
   /**
    * Updates the location of the pipe
@@ -34,14 +33,14 @@ public:
    * @return the x-coordinate of the left side of the pipe
    */
 
-  double GetPositionLeftSide() const ;
+  double GetPositionLeftSide() const;
 
   /**
-  * Gets the x-coordinate of the pipe's right side
-  * @return the x-coordinate of the right side of the pipe
-  */
+   * Gets the x-coordinate of the pipe's right side
+   * @return the x-coordinate of the right side of the pipe
+   */
 
-  double GetPositionRightSide()const ;
+  double GetPositionRightSide() const;
 
   /**
    * Gets the y-coordinate of the upper half of the pipe
@@ -64,7 +63,8 @@ public:
   int GetSpeed() const;
 
   /**
-   * Move the top pipe down and bottom pipe up until they meet at the midpoint height
+   * Move the top pipe down and bottom pipe up until they meet at the midpoint
+   * height
    */
   void MovePipe();
 
@@ -74,12 +74,9 @@ public:
    * @param left_side The desired x-coordinate for the left side of the pipe
    * @param right_side The desired x-coordinate for the right side of the pipe
    */
-
   void SetPipePosition(double left_side, double right_side);
 
-
 private:
-
   // The starting x-coordinate of left side of the top and bottom pipe
   double left_side_;
 
@@ -109,6 +106,5 @@ private:
   double target_height_;
 };
 
-}
-}
-
+} // namespace visualizer
+} // namespace game

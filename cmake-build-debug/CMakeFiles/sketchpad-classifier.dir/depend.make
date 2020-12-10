@@ -4329,6 +4329,3 @@ CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: /Users/phongtra
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: /Users/phongtran/Downloads/cinder_0.9.2_mac/include/glm/vector_relational.hpp
 CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o: ../src/visualizer/sprite.cpp
 
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o: ../include/visualizer/vertical_game_mode.h
-CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o: ../src/visualizer/vertical_game_mode.cpp
-

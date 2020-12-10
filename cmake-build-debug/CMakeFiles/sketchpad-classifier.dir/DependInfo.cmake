@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/pipe.cpp" "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o"
   "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/sketchpad.cc" "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o"
   "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/sprite.cpp" "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o"
-  "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/src/visualizer/vertical_game_mode.cpp" "/Users/phongtran/Downloads/cinder_0.9.2_mac/my-projects/final-project-PhongT16/cmake-build-debug/CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

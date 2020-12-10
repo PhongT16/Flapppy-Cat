@@ -11,14 +11,20 @@ namespace visualizer {
 
 class Sprite {
 public:
-
-  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem);
+  /**
+   * Constructor used for testing
+   * @param position The initial position of the sprite
+   * @param velocity The inital velocity of the sprite
+   * @param apothem The apothem of hte sprite
+   */
+  Sprite(const glm::vec2 &position, const glm::vec2 &velocity, size_t apothem);
   /**
    * Custom Constructor for Sprite
    * @param position The initial position of the Sprite
    * @param velocity The initial velocity of the Sprite
    */
-  Sprite(const glm::vec2 & position, const glm::vec2 & velocity, size_t apothem, double window_size);
+  Sprite(const glm::vec2 &position, const glm::vec2 &velocity, size_t apothem,
+         double window_size);
 
   /**
    * Checks whether there is pipe or border collision
@@ -39,73 +45,62 @@ public:
   /**
    * Drops the Sprite
    */
-
   void Drop();
 
   /**
    * Checks for collisions with the walls
    * @return whether the sprite has hit the border
    */
-   bool CheckBorderCollision();
-
-   /**
-    * Checks for collisions with the pipes
-    * @return whether the sprite has hit the pipe
-    */
-   bool CheckPipeCollision();
+  bool CheckBorderCollision();
 
   /**
-   * Whether the game has ended
-   * @return GameEnd
+   * Checks for collisions with the pipes
+   * @return whether the sprite has hit the pipe
    */
-   bool GetGame();
+  bool CheckPipeCollision();
 
-   /**
-    * Set the current pipe
-    */
-    void SetPipe(const Pipe & pipe);
+  /**
+   * Set the current pipe
+   */
+  void SetPipe(const Pipe &pipe);
 
+  /**
+   * Checks if the pipe has passed a pipe
+   * @param pipe
+   * @return Whether the sprite has just passed a pipe
+   */
 
-    /**
-     * Checks if the pipe has passed a pipe
-     * @param pipe
-     * @return Whether the sprite has just passed a pipe
-     */
+  bool HasPassedPipe(const Pipe &pipe);
 
-    bool HasPassedPipe(const Pipe & pipe);
+  /**
+   * Resets the game state of the sprite object
+   */
+  void ResetGame();
 
-    /**
-     * Resets the game state of the sprite object
-     */
+  /**
+   * Calculates the relative lerp value for any up movement
+   * @return The Relative Lerp Vector
+   */
+  glm::vec2 RelativeLerpUp();
 
-    void ResetGame();
+  /**
+   * Gets the velocity_
+   * Used for testing
+   */
+  glm::vec2 &GetVelocity();
 
-    /**
-     * Calculates the relative lerp value for any up movement
-     * @return The Relative Lerp Vector
-     */
+  /**
+   * Gets the position_
+   * Used for testing
+   */
 
-    glm::vec2 RelativeLerpUp();
+  glm::vec2 &GetPosition();
 
-    /**
-     * Gets the velocity_
-     * Used for testing
-     */
-
-    glm::vec2  & GetVelocity();
-
-    /**
-     * Gets the position_
-     * Used for testing
-     */
-
-    glm::vec2 & GetPosition();
-
-    /**
-     * Gets the lerp_
-     * Used for testing
-     */
-     glm::vec2 GetLerp();
+  /**
+   * Gets the lerp_
+   * Used for testing
+   */
+  glm::vec2 GetLerp();
 
 private:
   // The starting position of the sprite
@@ -127,7 +122,7 @@ private:
   bool has_collided_;
 
   // The current pipe that the sprite is approaching
-  const Pipe * current_pipe_;
+  const Pipe *current_pipe_;
 
   // The next position of the sprite
   glm::vec2 next_position_;
@@ -136,7 +131,7 @@ private:
   glm::vec2 lerp_;
 
   // Whether Relative Lerp has been called
-  bool isLerpActive;
+  bool is_lerp_active_;
 
   // The texture for the up motion of the top pipe
   ci::gl::TextureRef up_motion_texture_;
@@ -147,7 +142,5 @@ private:
   // The size of the window
   const double kWindowSize;
 };
-}
-}
-
-
+} // namespace visualizer
+} // namespace game

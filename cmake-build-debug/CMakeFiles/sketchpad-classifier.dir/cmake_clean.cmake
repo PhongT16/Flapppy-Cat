@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/sketchpad-classifier.dir/src/visualizer/pipe.cpp.o"
   "CMakeFiles/sketchpad-classifier.dir/src/visualizer/sketchpad.cc.o"
   "CMakeFiles/sketchpad-classifier.dir/src/visualizer/sprite.cpp.o"
-  "CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o"
   "Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/MacOS/sketchpad-classifier"
   "Debug/sketchpad-classifier/sketchpad-classifier.app/Contents/Resources/CinderApp.icns"
   "Debug/sketchpad-classifier/sketchpad-classifier.pdb"

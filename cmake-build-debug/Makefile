@@ -356,36 +356,6 @@ src/visualizer/sprite.cpp.s:
 	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/sprite.cpp.s
 .PHONY : src/visualizer/sprite.cpp.s
 
-src/visualizer/vertical_game_mode.o: src/visualizer/vertical_game_mode.cpp.o
-
-.PHONY : src/visualizer/vertical_game_mode.o
-
-# target to build an object file
-src/visualizer/vertical_game_mode.cpp.o:
-	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.o
-	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.o
-.PHONY : src/visualizer/vertical_game_mode.cpp.o
-
-src/visualizer/vertical_game_mode.i: src/visualizer/vertical_game_mode.cpp.i
-
-.PHONY : src/visualizer/vertical_game_mode.i
-
-# target to preprocess a source file
-src/visualizer/vertical_game_mode.cpp.i:
-	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.i
-	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.i
-.PHONY : src/visualizer/vertical_game_mode.cpp.i
-
-src/visualizer/vertical_game_mode.s: src/visualizer/vertical_game_mode.cpp.s
-
-.PHONY : src/visualizer/vertical_game_mode.s
-
-# target to generate assembly for a file
-src/visualizer/vertical_game_mode.cpp.s:
-	$(MAKE) -f CMakeFiles/sketchpad-classifier.dir/build.make CMakeFiles/sketchpad-classifier.dir/src/visualizer/vertical_game_mode.cpp.s
-	$(MAKE) -f CMakeFiles/naive-bayes-test.dir/build.make CMakeFiles/naive-bayes-test.dir/src/visualizer/vertical_game_mode.cpp.s
-.PHONY : src/visualizer/vertical_game_mode.cpp.s
-
 tests/rename_this_test_file.o: tests/rename_this_test_file.cc.o
 
 .PHONY : tests/rename_this_test_file.o
@@ -472,9 +442,6 @@ help:
 	@echo "... src/visualizer/sprite.o"
 	@echo "... src/visualizer/sprite.i"
 	@echo "... src/visualizer/sprite.s"
-	@echo "... src/visualizer/vertical_game_mode.o"
-	@echo "... src/visualizer/vertical_game_mode.i"
-	@echo "... src/visualizer/vertical_game_mode.s"
 	@echo "... tests/rename_this_test_file.o"
 	@echo "... tests/rename_this_test_file.i"
 	@echo "... tests/rename_this_test_file.s"

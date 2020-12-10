@@ -13,17 +13,33 @@ namespace game {
 
 namespace visualizer {
 
-/**
- * Allows a user to draw a digit on a sketchpad and uses Naive Bayes to
- * classify it.
- */
 class JetpackCat : public ci::app::App {
- public:
+
+public:
+  /**
+   * Default Constructor
+   */
   JetpackCat();
 
+  /**
+   * Draws the game
+   */
   void draw() override;
+
+  /**
+   * Preset game settings
+   */
   void setup() override;
+
+  /**
+   * Controls the events of the game
+   * @param event
+   */
   void keyDown(ci::app::KeyEvent event) override;
+
+  /**
+   * Destructor
+   */
   ~JetpackCat();
 
   /**
@@ -40,16 +56,12 @@ class JetpackCat : public ci::app::App {
    * Deletes pipes that have gone out of frame
    * Helps free up heap memory and relieves with lag
    */
-
   void DeletePipe();
 
   // provided that you can see the entire UI on your screen.
   const double kWindowSize = 650;
 
-
-
- private:
-
+private:
   // The sprite for the game
   Sprite sprite_;
 
@@ -57,7 +69,7 @@ class JetpackCat : public ci::app::App {
   std::vector<Pipe *> pipe_list_;
 
   // A count of when a new pipe gets spawned
-  int pipe_spawn_timer;
+  int pipe_spawn_timer_;
 
   // Keeps track of whether the game has start
   bool start_game_ = false;
@@ -79,11 +91,8 @@ class JetpackCat : public ci::app::App {
 
   // Texture containg the background picture
   ci::gl::TextureRef mTexture;
-
-
-
 };
 
-}  // namespace visualizer
+} // namespace visualizer
 
-}  // namespace game
+} // namespace game
